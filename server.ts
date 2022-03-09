@@ -30,7 +30,7 @@ app.get('/login', function(req, res) {
 
 // Handling GET / Request
 app.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+    res.send('typescript backend');
 })
   
 // Server setup
