@@ -1,0 +1,26 @@
+body {
+  background-color: #16111f;
+  height: 100vh;
+  color: white;
+}
+
+.flex-container {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  pointer-events: none;
+  max-height: 50px;
+}
+
+.App-header {
+  height: 60vh;
+  background-color: #272033;
+}
+
