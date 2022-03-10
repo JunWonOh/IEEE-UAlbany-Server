@@ -23,16 +23,16 @@ function Navigation() {
                 react_1.default.createElement("a", { className: "nav-link navbar-brand", href: "#" },
                     react_1.default.createElement("img", { src: "/images/transparent logo.png", className: "App-logo", alt: "logo" })),
                 react_1.default.createElement("button", { className: "navbar-toggler", type: "button", "data-bs-toggle": "collapse", "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "Toggle navigation" },
-                    react_1.default.createElement("span", { className: "navbar-toggler-icon" })),
+                    react_1.default.createElement("i", { className: "fas fa-bars" })),
                 react_1.default.createElement("div", { className: "collapse navbar-collapse", id: "navbarSupportedContent" },
                     react_1.default.createElement("ul", { className: "navbar-nav me-auto mb-2 mb-lg-0" },
                         react_1.default.createElement("li", { className: "nav-item" },
-                            react_1.default.createElement("a", { className: "nav-link", "aria-current": "page", href: "#" }, "Documentation")),
+                            react_1.default.createElement("a", { className: "nav-link", "aria-current": "page", href: "#" }, "Documentation_")),
                         react_1.default.createElement("li", { className: "nav-item" },
-                            react_1.default.createElement("a", { className: "nav-link", href: "#" }, "Support")),
+                            react_1.default.createElement("a", { className: "nav-link", href: "#" }, "Support_")),
                         react_1.default.createElement("li", { className: "nav-item" },
-                            react_1.default.createElement("a", { className: "nav-link", href: "#" }, "About"))),
+                            react_1.default.createElement("a", { className: "nav-link", href: "#" }, "About_"))),
                     react_1.default.createElement("form", { className: "d-flex" },
-                        react_1.default.createElement("button", { className: "btn btn-outline-light rounded-pill", type: "submit", onClick: (e) => { e.preventDefault(); window.location.href = 'http://localhost:3000/login'; } }, "Sign in/Up")))))));
+                        react_1.default.createElement("button", { className: "btn btn-outline-light rounded-pill", type: "submit", onClick: (e) => { e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'; } }, "Sign in/Up")))))));
 }
 exports.default = Navigation;

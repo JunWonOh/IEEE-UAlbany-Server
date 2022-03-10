@@ -1,0 +1,93 @@
+  /* FORMATTING */
+  body {
+      background-color: #16111f;
+      height: 100vh;
+      color: white;
+      font-family: 'Ubuntu Mono', monospace, Arial;
+      font-weight: 400;
+  }
+  .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+  .container {
+      height: 100%;
+      position: relative;
+  }
+  .flex-container {
+      flex-direction: row;
+      display: flex;
+      width: 100%;
+  }
+  .frosted-container {
+      background: rgba(39, 32, 51, 0.5);
+  }
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      .frosted-container {
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+      }
+  }
+
+  /* HOME BUTTONS */
+  .home-buttons {
+      margin-left: auto;
+      margin-right: 0;
+      width: fit-content;
+  }
+  .btn-get-started,
+  .btn-get-started:active,
+  .btn-get-started:active:focus,
+  .btn-get-started:focus {
+      background-color: #ebba34;
+      color: #16111f;
+      box-shadow: none;
+      border-color: rgba(0, 0, 0, .125);
+      margin-top: 10px;
+  }
+  .btn-get-started:hover {
+      background-color: #bd8035;
+      color: white;
+      box-shadow: none;
+      border-color: rgba(0, 0, 0, .125);
+  }
+  .btn-parent-site {
+      margin-right: 10px;
+      margin-top: 10px;
+  }
+
+  /* HEADER */
+  .App-logo {
+      pointer-events: none;
+      max-height: 50px;
+  }
+  .App-header {
+      height: 60vh;
+      min-height: 252px;
+      background-image: url('/images/conways.gif');
+  }
+  .home-div {
+      height: 100%;
+      margin-top: -76px;
+  }
+  .home-description-div,
+  .home-image-div {
+      flex-basis: 100%;
+  }
+  .home-description-title {
+      margin: 0;
+      font-size: 1.3rem;
+  }
+  .home-description {
+      margin: 0;
+  }
+  .logo-svg {
+      width: 100%;
+      display:block;
+      margin:auto;
+      pointer-events: none;
+  }
