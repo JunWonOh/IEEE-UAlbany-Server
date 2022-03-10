@@ -1,4 +1,7 @@
   /* FORMATTING */
+  .align-center {
+      text-align: center;
+  }
   body {
       background-color: #16111f;
       height: 100vh;
@@ -18,6 +21,11 @@
       height: 100%;
       position: relative;
   }
+  .container-2 {
+      height: 40vh;
+      min-height: 300px;
+      position: relative;
+  }
   .flex-container {
       flex-direction: row;
       display: flex;
@@ -31,6 +39,10 @@
           -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
       }
+  }
+  .offset {
+    margin-top: -76px;
+    height: 100vh;
   }
 
   /* HOME BUTTONS */
@@ -66,23 +78,23 @@
       max-height: 50px;
   }
   .App-header {
-      height: 60vh;
+      height: 100vh;
       min-height: 252px;
       background-image: url('/images/conways.gif');
   }
   .home-div {
       height: 100%;
-      margin-top: -76px;
   }
   .home-description-div,
   .home-image-div {
       flex-basis: 100%;
   }
-  .home-description-title {
+  .title {
       margin: 0;
       font-size: 1.3rem;
+      font-weight: bold;
   }
-  .home-description {
+  .description {
       margin: 0;
   }
   .logo-svg {
@@ -90,4 +102,45 @@
       display:block;
       margin:auto;
       pointer-events: none;
+  }
+
+  /* ABOUT SECTION */
+  .disclaimer {
+      margin-top: 10px;
+      font-size: .8rem;
+      font-style: italic;
+  }
+  .about-discord, .about-portfolio {
+      height: 40vh;
+      min-height: 300px;
+  }
+  .about-host-icons .font-awesome, .socials-icons .fab {
+      margin: 40px;
+      font-size: 3rem;
+      color: #ebba34;
+  }
+
+  .socials-icons .fab {
+      color: #16111f;
+  }
+
+  .socials-icons .fab:hover {
+    color: #301c4a;
+  }
+
+  .about-discord-icons .fa-discord, .fa-folder-open {
+      font-size: 7rem;
+      color: #ebba34;
+  }
+  .about-discord-text, .about-portfolio-text, .about-discord-icons, .about-portfolio-icons {
+      flex-basis: 100%;
+  }
+
+  .qna-div, .socials {
+    background-color: #bd8035;
+    color: #16111f;
+  }
+  #support {
+      width: 100%;
+      height: 100%;
   }

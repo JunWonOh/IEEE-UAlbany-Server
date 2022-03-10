@@ -29,10 +29,10 @@ export default function Navigation() {
                                 <a className="nav-link" aria-current="page" href="#">Documentation_</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Support_</a>
+                                <a className="nav-link" href="#support">Support_</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">About_</a>
+                                <a className="nav-link" href="#about">About_</a>
                             </li>
                         </ul>
                         <form className="d-flex">

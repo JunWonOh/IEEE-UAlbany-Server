@@ -29,9 +29,9 @@ function Navigation() {
                         react_1.default.createElement("li", { className: "nav-item" },
                             react_1.default.createElement("a", { className: "nav-link", "aria-current": "page", href: "#" }, "Documentation_")),
                         react_1.default.createElement("li", { className: "nav-item" },
-                            react_1.default.createElement("a", { className: "nav-link", href: "#" }, "Support_")),
+                            react_1.default.createElement("a", { className: "nav-link", href: "#support" }, "Support_")),
                         react_1.default.createElement("li", { className: "nav-item" },
-                            react_1.default.createElement("a", { className: "nav-link", href: "#" }, "About_"))),
+                            react_1.default.createElement("a", { className: "nav-link", href: "#about" }, "About_"))),
                     react_1.default.createElement("form", { className: "d-flex" },
                         react_1.default.createElement("button", { className: "btn btn-outline-light rounded-pill", type: "submit", onClick: (e) => { e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'; } }, "Sign in/Up")))))));
 }
