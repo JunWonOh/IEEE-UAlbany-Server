@@ -2,6 +2,11 @@
   height: 76px;
 }
 
+.App-logo {
+  pointer-events: none;
+  max-height: 50px;
+}
+
 .navbar {
   z-index: 1;
 }
