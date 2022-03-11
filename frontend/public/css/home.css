@@ -1,31 +1,12 @@
   /* FORMATTING */
-  .align-center {
+  .text-center {
       text-align: center;
   }
   body {
       background-color: #16111f;
-      height: 100vh;
       color: white;
       font-family: 'Ubuntu Mono', monospace, Arial;
       font-weight: 400;
-  }
-  .center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-  }
-  .container {
-      height: 100%;
-      position: relative;
-  }
-  .container-2 {
-      height: 40vh;
-      min-height: fit-content;
-      width: 100%;
-      position: relative;
   }
   .flex-container {
       flex-direction: row;
@@ -43,7 +24,20 @@
   }
   .offset {
     margin-top: -76px;
-    height: 100vh;
+    height:auto;
+    overflow:visible;
+  }
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .container {
+    height: 100%;
+    position: relative;
   }
 
   /* HOME BUTTONS */
@@ -74,17 +68,9 @@
   }
 
   /* HEADER */
-  .App-logo {
-      pointer-events: none;
-      max-height: 50px;
-  }
-  .App-header {
-      height: 100vh;
-      min-height: 252px;
-      background-image: url('/images/conways.gif');
-  }
   .home-div {
-      height: 100%;
+      height: 100vh;
+      background-image: url('/images/conways.gif');
   }
   .home-description-div,
   .home-image-div {
@@ -100,49 +86,35 @@
   }
   .logo-svg {
       width: 100%;
-      display:block;
-      margin:auto;
       pointer-events: none;
   }
 
-  /* ABOUT SECTION */
+  /* SECTIONS */
   .disclaimer {
       margin-top: 10px;
       font-size: .8rem;
       font-style: italic;
   }
-  .about-discord, .about-portfolio {
-      height: 40vh;
-      width: 100%;
-      min-height: fit-content;
+  .small-icons .font-awesome, .small-icons .fab{
+    margin: 5vh;
+    font-size: 3rem;
+    color: #ebba34;
   }
-  .about-host-icons .font-awesome, .socials-icons .fab {
-      margin: 40px;
-      font-size: 3rem;
-      color: #ebba34;
-  }
-
-  .socials-icons .fab {
-      color: #16111f;
-  }
-
-  .socials-icons .fab:hover {
-    color: #301c4a;
-  }
-
-  .about-discord-icons .fa-discord, .fa-folder-open {
+  .large-icon {
       font-size: 7rem;
       color: #ebba34;
+      text-align:center;
+      width: 100%;
   }
-  .about-discord-text, .about-portfolio-text, .about-discord-icons, .about-portfolio-icons {
-      flex-basis: 100%;
-  }
-
-  .qna-div, .socials {
+  #support {
     background-color: #bd8035;
     color: #16111f;
   }
-  #support {
-      width: 100%;
-      height: 100%;
+  #about, #discord-integration, #portfolio, #support {
+    width: 100%;
+    height: fit-content;
+    padding: 10vh;
+  }
+  .questions {
+      margin-top: 20px;
   }
