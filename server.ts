@@ -5,12 +5,27 @@ import express from 'express';
 const cors = require('cors');
 const { auth, requiresAuth } = require('express-openid-connect');
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 
 const app = express();
 const PORT:Number = 3000;
 
+app.use(cors());
+app.use(express.json());
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser: true }
+);
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+})
+
+const usersRouter = require('./routes/users.routes');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("frontend/build"))
+app.use('/users', usersRouter);
+
 
 app.use(
     auth({

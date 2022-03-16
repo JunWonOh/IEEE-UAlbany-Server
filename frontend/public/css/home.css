@@ -70,6 +70,7 @@
   /* HEADER */
   .home-div {
       height: 100vh;
+      min-height: 400px; /* EDIT TO FIX SCALING ISSUES */
       background-image: url('/images/conways.gif');
   }
   .home-description-div,

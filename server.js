@@ -9,10 +9,21 @@ const express_1 = __importDefault(require("express"));
 const cors = require('cors');
 const { auth, requiresAuth } = require('express-openid-connect');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const app = (0, express_1.default)();
 const PORT = 3000;
+app.use(cors());
+app.use(express_1.default.json());
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser: true });
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("MongoDB database connection established successfully");
+});
+const usersRouter = require('./routes/users.routes');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express_1.default.static("frontend/build"));
+app.use('/users', usersRouter);
 app.use(auth({
     //authRequired: every route does not need authentication
     authRequired: false,
