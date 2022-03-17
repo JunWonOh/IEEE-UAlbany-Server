@@ -30,5 +30,4 @@ var userSchema = new Schema({
     timestamps: true
 });
 var User = mongoose_model.model('User', userSchema);
-console.log('test model');
 module.exports = User;

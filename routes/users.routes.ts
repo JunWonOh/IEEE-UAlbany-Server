@@ -1,5 +1,8 @@
 const router = require('express').Router();
 let User_model = require('../models/users.model');
-console.log('test');
+
+router.route('/').get((req, res) => {
+    
+})
 
 module.exports = router;

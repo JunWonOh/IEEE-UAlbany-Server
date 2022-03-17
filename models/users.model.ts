@@ -34,6 +34,4 @@ const userSchema = new Schema({
 
 const User = mongoose_model.model('User', userSchema);
 
-console.log('test model')
-
 module.exports = User;

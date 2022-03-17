@@ -32,7 +32,14 @@ app.get('/login', function (req, res) {
     res.send("Logging in");
 });
 // Handling GET / Request
+app.use('/', function (req, res) {
+    console.log('printing user from USE');
+    console.log(JSON.stringify(req.user));
+    res.send('typescript backend');
+});
 app.get('/', function (req, res) {
+    console.log('printing user from GET');
+    console.log(JSON.stringify(req.user));
     res.send('typescript backend');
 });
 // Server setup

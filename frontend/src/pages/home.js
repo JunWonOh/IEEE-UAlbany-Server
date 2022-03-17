@@ -11,6 +11,21 @@ export default function Home() {
         else
             setAnimation("animation-on");
     };
+    var reveal = function () {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+            else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    };
+    window.addEventListener("scroll", reveal);
     return (React.createElement("div", { className: "App" },
         React.createElement("header", { className: "App-header" },
             React.createElement(Navigation, null),
@@ -26,15 +41,18 @@ export default function Home() {
                                         React.createElement("button", { className: "btn btn-outline-light btn-parent-site", type: "submit", onClick: function (e) { e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'; } }, "Parent Site"),
                                         React.createElement("button", { className: "btn btn-primary btn-get-started", type: "submit", onClick: function (e) { e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'; } }, "Get Started"),
                                         React.createElement("div", { className: "form-check form-switch" },
-                                            React.createElement("input", { className: "form-check-input", type: "checkbox", id: "flexSwitchCheckDefault", onChange: function () { return toggleAnimation; } }),
-                                            React.createElement("label", { className: "form-check-label", htmlFor: "flexSwitchCheckDefault" }, "Disable animations"))))),
+                                            React.createElement("input", { className: "form-check-input", type: "checkbox", id: "flexSwitchCheckDefault", onChange: toggleAnimation }),
+                                            React.createElement("label", { className: "form-check-label", htmlFor: "flexSwitchCheckDefault" }, "Disable animation"))))),
                             React.createElement("div", { className: "home-image-div container" },
                                 React.createElement("div", { className: "center" },
                                     React.createElement("img", { className: "logo-svg", src: logo_svg, alt: "server-header-img" })))))),
                 React.createElement("section", { id: "about" },
                     React.createElement("div", { className: "text-center" },
-                        React.createElement("p", { className: "title" }, "All your side projects, in one convenient location"),
-                        React.createElement("p", { className: "description" }, "Host or upload your websites, discord bots, apps and more without being limited to a single linux container."),
+                        React.createElement("div", { className: "container-anim reveal" },
+                            React.createElement("div", { className: "text-container" },
+                                React.createElement("div", { className: "text-box" },
+                                    React.createElement("p", { className: "title" }, "All your side projects, in one convenient location"),
+                                    React.createElement("p", { className: "description" }, "Host or upload your websites, discord bots, apps and more without being limited to a single linux container.")))),
                         React.createElement("div", { className: "small-icons" },
                             React.createElement("i", { className: "font-awesome fas fa-mobile-alt" }),
                             React.createElement("i", { className: "font-awesome fas fa-server" }),
@@ -42,9 +60,12 @@ export default function Home() {
                 React.createElement("section", { id: "discord-integration" },
                     React.createElement("div", { className: "row" },
                         React.createElement("div", { className: "col-md-6" },
-                            React.createElement("p", { className: "title" }, "Side-by-side Discord integration"),
-                            React.createElement("p", { className: "description" }, "Being a Discord-oriented organization, users must interface with the IEEE Server Discord bot to communicate with the server."),
-                            React.createElement("p", { className: "disclaimer" }, "(Disclaimer: By tying your Discord account to the server, only your Discord profile name, avatar, ID, and email will be logged, which most Discord bots have access to already. You can remove this information any time by contacting the server administrator.)")),
+                            React.createElement("div", { className: "container-anim reveal" },
+                                React.createElement("div", { className: "text-container" },
+                                    React.createElement("div", { className: "text-box" },
+                                        React.createElement("p", { className: "title" }, "Side-by-side Discord integration"),
+                                        React.createElement("p", { className: "description" }, "Being a Discord-oriented organization, users must interface with the IEEE Server Discord bot to communicate with the server."),
+                                        React.createElement("p", { className: "disclaimer" }, "(Disclaimer: By tying your Discord account to the server, only your Discord profile name, avatar, ID, and email will be logged, which most Discord bots have access to already. You can remove this information any time by contacting the server administrator.)"))))),
                         React.createElement("div", { className: "col-md-6" },
                             React.createElement("i", { className: "large-icon font-awesome fab fa-discord" })))),
                 React.createElement("section", { id: "portfolio" },
@@ -52,11 +73,14 @@ export default function Home() {
                         React.createElement("div", { className: "col-md-6" },
                             React.createElement("i", { className: "large-icon fas fa-folder-open" })),
                         React.createElement("div", { className: "col-md-6" },
-                            React.createElement("p", { className: "title" }, "Build and compare your portfolio"),
-                            React.createElement("ul", null,
-                                React.createElement("li", null, "Have your projects easily accessible to show off"),
-                                React.createElement("li", null, "See what projects your peers are working on by searching their Discord name"),
-                                React.createElement("li", null, "Members who upload a project to the server get the \"Server Contributor\" role to distinguish themself"))))),
+                            React.createElement("div", { className: "container-anim reveal" },
+                                React.createElement("div", { className: "text-container" },
+                                    React.createElement("div", { className: "text-box" },
+                                        React.createElement("p", { className: "title" }, "Build and compare your portfolio"),
+                                        React.createElement("ul", null,
+                                            React.createElement("li", null, "Have your projects easily accessible to show off"),
+                                            React.createElement("li", null, "See what projects your peers are working on by searching their Discord name"),
+                                            React.createElement("li", null, "Members who upload a project to the server get the \"Server Contributor\" role to distinguish themself")))))))),
                 React.createElement("section", { id: "support" },
                     React.createElement("div", { className: "faq" },
                         React.createElement("p", { className: "title" }, "Q and A"),
