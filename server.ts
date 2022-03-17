@@ -48,12 +48,12 @@ app.get('/login', function(req, res) {
 app.use('/', (req, res) => {
     console.log('printing user from USE');
     console.log(JSON.stringify(req.user));
-    res.send('typescript backend');
+    res.send(req.user);
 })
 app.get('/', (req, res) => {
     console.log('printing user from GET');
     console.log(JSON.stringify(req.user));
-    res.send('typescript backend');
+    res.send(req.user);
 })
   
 // Server setup

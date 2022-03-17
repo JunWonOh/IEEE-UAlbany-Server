@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-// import '../App.css';
 import Navigation from '../components/navigation';
 import '../css/pages/home.css'
 import logo_svg from '../images/ieeeualbany.svg'
@@ -17,8 +16,12 @@ export default function Home() {
     };
 
     useEffect(()=> {
-        fetch('/')
-        .then(response => console.log(response))
+        axios.get('/').then(response => {
+            console.log(JSON.stringify(response));
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     })
     
     const reveal = () => {

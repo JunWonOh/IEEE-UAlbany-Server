@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import '../App.css';
+import axios from 'axios';
 import Navigation from '../components/navigation';
 import '../css/pages/home.css';
 import logo_svg from '../images/ieeeualbany.svg';
@@ -12,8 +12,12 @@ export default function Home() {
             setAnimation("animation-on");
     };
     useEffect(function () {
-        fetch('/')
-            .then(function (response) { return console.log(response); });
+        axios.get('/').then(function (response) {
+            console.log(JSON.stringify(response));
+        })
+            .catch(function (error) {
+            console.log(error);
+        });
     });
     var reveal = function () {
         var reveals = document.querySelectorAll(".reveal");

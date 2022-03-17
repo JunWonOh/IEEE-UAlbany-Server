@@ -36,12 +36,12 @@ app.get('/login', function (req, res) {
 app.use('/', function (req, res) {
     console.log('printing user from USE');
     console.log(JSON.stringify(req.user));
-    res.send('typescript backend');
+    res.send(req.user);
 });
 app.get('/', function (req, res) {
     console.log('printing user from GET');
     console.log(JSON.stringify(req.user));
-    res.send('typescript backend');
+    res.send(req.user);
 });
 // Server setup
 app.listen(process.env.PORT || PORT, function () {
