@@ -1,14 +1,9 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importDefault(require("react"));
-const react_2 = require("@testing-library/react");
-const App_1 = __importDefault(require("./App"));
-require("@testing-library/jest-dom/extend-expect");
-test('renders learn react link', () => {
-    (0, react_2.render)(react_1.default.createElement(App_1.default, null));
-    const linkElement = react_2.screen.getByText(/learn react/i);
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import App from './App';
+import '@testing-library/jest-dom/extend-expect';
+test('renders learn react link', function () {
+    render(React.createElement(App, null));
+    var linkElement = screen.getByText(/learn react/i);
     expect(linkElement).toBeInTheDocument();
 });
