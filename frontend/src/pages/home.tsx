@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 // import '../App.css';
 import Navigation from '../components/navigation';
@@ -15,6 +15,11 @@ export default function Home() {
         else 
             setAnimation("animation-on");
     };
+
+    useEffect(()=> {
+        fetch('/')
+        .then(response => console.log(response))
+    })
     
     const reveal = () => {
         var reveals = document.querySelectorAll(".reveal");

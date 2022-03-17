@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import '../App.css';
 import Navigation from '../components/navigation';
 import '../css/pages/home.css';
@@ -11,6 +11,10 @@ export default function Home() {
         else
             setAnimation("animation-on");
     };
+    useEffect(function () {
+        fetch('/')
+            .then(function (response) { return console.log(response); });
+    });
     var reveal = function () {
         var reveals = document.querySelectorAll(".reveal");
         for (var i = 0; i < reveals.length; i++) {
