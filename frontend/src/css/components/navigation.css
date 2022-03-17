@@ -27,7 +27,6 @@
 }
 
 .nav-link:hover, .nav-link:active {
-  text-decoration: underline;
   color: #ebba34;
 }
 
@@ -45,23 +44,33 @@
 .navbar-toggler:active,
 .fa-bars:focus {
     outline: none;
-    /* box-shadow: none; */
 }
 
-/* .collapse.show {
-  background: rgba(39, 32, 51, 0.5);
-}
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .collapse.show {
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-  }
-} */
 @media (max-width: 1000px) {
   nav.navbar {
     background: black;
-    /* background: rgba(39, 32, 51); */
-    
     border-radius: 5%;
   }
 }
+
+.nav-link:hover > .blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.nav-item:hover {
+  border-radius: 25px;
+  /* outline: 1px solid white; */
+  box-shadow: rgba(235, 186, 52, 0.25) 0px 54px 55px, rgba(235, 186, 52, 0.12) 0px -12px 30px, rgba(235, 186, 52, 0.12) 0px 4px 6px, rgba(235, 186, 52, 0.17) 0px 12px 13px, rgba(235, 186, 52, 0.09) 0px -3px 5px;
+}
+

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import '../App.css';
+import '../css/components/navigation.css';
 
 // function signIn(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 //     // e.preventDefault();
@@ -26,13 +26,13 @@ export default function Navigation() {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link" aria-current="page" href="#">Documentation_</a>
+                                <a className="nav-link" aria-current="page" href="#">Documentation<span className="blink">_</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#support">Support_</a>
+                                <a className="nav-link" href="#support">Support<span className="blink">_</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#about">About_</a>
+                                <a className="nav-link" href="#about">About<span className="blink">_</span></a>
                             </li>
                         </ul>
                         <form className="d-flex">
