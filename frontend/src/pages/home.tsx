@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import '../css/pages/home.css';
+// import '../App.css';
 import Navigation from '../components/navigation';
-import logo_svg from '../images/ieeeualbany.svg';
-
+import '../css/pages/home.css'
+import logo_svg from '../images/ieeeualbany.svg'
 
 export default function Home() {
-    const [animation, setAnimation] = useState("animation-on");
 
+    const [animation, setAnimation] = useState("animation-on");
+    
     const toggleAnimation = () => {
         if (animation === "animation-on")
             setAnimation("animation-off");
         else 
             setAnimation("animation-on");
     };
-
+    
     return (
         <div className="App">
             <header className="App-header">
@@ -31,7 +32,7 @@ export default function Home() {
                                         <button className="btn btn-outline-light btn-parent-site" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Parent Site</button>
                                         <button className="btn btn-primary btn-get-started" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Get Started</button>
                                         <div className="form-check form-switch">
-                                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={()=>toggleAnimation()}></input>
+                                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={()=>toggleAnimation}></input>
                                             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Disable animations</label>
                                         </div>
                                     </div>

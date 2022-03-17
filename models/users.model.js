@@ -1,7 +1,6 @@
-"use strict";
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const userSchema = new Schema({
+var mongoose_model = require('mongoose');
+var Schema = mongoose_model.Schema;
+var userSchema = new Schema({
     id: {
         type: String,
         required: true,
@@ -30,6 +29,6 @@ const userSchema = new Schema({
 }, {
     timestamps: true
 });
-const User = mongoose.model('User', userSchema);
+var User = mongoose_model.model('User', userSchema);
 console.log('test model');
 module.exports = User;

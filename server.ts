@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 // Importing module
-import express from 'express';
+const express = require('express');
 const cors = require('cors');
 const { auth, requiresAuth } = require('express-openid-connect');
 const bodyParser = require('body-parser')

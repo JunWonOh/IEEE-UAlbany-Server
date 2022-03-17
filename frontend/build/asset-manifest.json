@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.79f3d0a3.css",
-    "main.js": "/static/js/main.e88a762a.js",
+    "main.css": "/static/css/main.d615411e.css",
+    "main.js": "/static/js/main.acac3dd3.js",
+    "static/js/512.125ea300.chunk.js": "/static/js/512.125ea300.chunk.js",
     "static/media/conways.gif": "/static/media/conways.6233644f8280f0441817.gif",
     "static/media/dark-uni-bg.png": "/static/media/dark-uni-bg.757cda0df7088521ea72.png",
     "static/media/transparent logo.png": "/static/media/transparent logo.38cf5d55da30dff59917.png",
     "static/media/ieeeualbany.svg": "/static/media/ieeeualbany.8d295460c731867022f1a3d54dbbb59a.svg",
     "index.html": "/index.html",
-    "main.79f3d0a3.css.map": "/static/css/main.79f3d0a3.css.map",
-    "main.e88a762a.js.map": "/static/js/main.e88a762a.js.map"
+    "main.d615411e.css.map": "/static/css/main.d615411e.css.map",
+    "main.acac3dd3.js.map": "/static/js/main.acac3dd3.js.map",
+    "512.125ea300.chunk.js.map": "/static/js/512.125ea300.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79f3d0a3.css",
-    "static/js/main.e88a762a.js"
+    "static/css/main.d615411e.css",
+    "static/js/main.acac3dd3.js"
   ]
 }

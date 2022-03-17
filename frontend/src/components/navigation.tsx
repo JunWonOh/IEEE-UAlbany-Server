@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import '../css/components/navigation.css';
-import Logo from '../images/transparent logo.png'
+import '../css/components/navigation.css'
+import logo from '../images/transparent logo.png'
+
 
 // function signIn(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 //     // e.preventDefault();
@@ -20,7 +21,7 @@ export default function Navigation() {
             <div id="App-navigation">
                 <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">
-                        <a className="nav-link navbar-brand" href="#"><img src={Logo} className="App-logo" alt="logo" /></a>
+                        <a className="nav-link navbar-brand" href="#"><img src={logo} className="App-logo" alt="logo" /></a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <i className="fas fa-bars"/>
                         </button>

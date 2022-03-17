@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose_model = require('mongoose');
 
-const Schema = mongoose.Schema;
+const Schema = mongoose_model.Schema;
 
 const userSchema = new Schema({
     id: {
@@ -32,7 +32,7 @@ const userSchema = new Schema({
     timestamps: true
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose_model.model('User', userSchema);
 
 console.log('test model')
 
