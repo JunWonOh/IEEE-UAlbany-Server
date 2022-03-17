@@ -5,7 +5,7 @@
   body {
       background-color: #16111f;
       color: white;
-      font-family: 'Ubuntu Mono', monospace, Arial;
+      /* font-family: 'Ubuntu Mono', monospace, Arial; */
       font-weight: 400;
   }
   .flex-container {
@@ -90,10 +90,10 @@
     margin-top: 10px;
   }
   .animation-on {
-      background-image: url('/images/conways.gif');
+      background-image: url('../../images/conways.gif');
   }
   .animation-off {
-    background-image: url('/images/dark-uni-bg.png');
+    background-image: url('../../images/dark-uni-bg.png');
   }
   .home-description-div,
   .home-image-div {

@@ -4,7 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
-require("../App.css");
+require("../css/components/navigation.css");
+const transparent_logo_png_1 = __importDefault(require("../images/transparent logo.png"));
 // function signIn(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 //     // e.preventDefault();
 //     // axios.get('/login')
@@ -21,7 +22,7 @@ function Navigation() {
         react_1.default.createElement("nav", { className: "navbar navbar-expand-lg" },
             react_1.default.createElement("div", { className: "container-fluid" },
                 react_1.default.createElement("a", { className: "nav-link navbar-brand", href: "#" },
-                    react_1.default.createElement("img", { src: "/images/transparent logo.png", className: "App-logo", alt: "logo" })),
+                    react_1.default.createElement("img", { src: transparent_logo_png_1.default, className: "App-logo", alt: "logo" })),
                 react_1.default.createElement("button", { className: "navbar-toggler", type: "button", "data-bs-toggle": "collapse", "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "Toggle navigation" },
                     react_1.default.createElement("i", { className: "fas fa-bars" })),
                 react_1.default.createElement("div", { className: "collapse navbar-collapse", id: "navbarSupportedContent" },

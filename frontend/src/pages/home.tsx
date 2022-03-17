@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import '../css/pages/home.css';
 import Navigation from '../components/navigation';
+import logo_svg from '../images/ieeeualbany.svg';
+
 
 export default function Home() {
     const [animation, setAnimation] = useState("animation-on");
@@ -37,7 +39,7 @@ export default function Home() {
                             </div>
                             <div className="home-image-div container">
                                 <div className="center">
-                                    <img className="logo-svg" src="/images/ieeeualbany.svg" alt="server-header-img" />
+                                    <img className="logo-svg" src={logo_svg} alt="server-header-img" />
                                 </div>
                             </div>
                         </div>

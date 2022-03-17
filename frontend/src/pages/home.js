@@ -27,8 +27,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
-// import '../App.css';
+require("../css/pages/home.css");
 const navigation_1 = __importDefault(require("../components/navigation"));
+const ieeeualbany_svg_1 = __importDefault(require("../images/ieeeualbany.svg"));
 function Home() {
     const [animation, setAnimation] = (0, react_1.useState)("animation-on");
     const toggleAnimation = () => {
@@ -56,7 +57,7 @@ function Home() {
                                             react_1.default.createElement("label", { className: "form-check-label", htmlFor: "flexSwitchCheckDefault" }, "Disable animations"))))),
                             react_1.default.createElement("div", { className: "home-image-div container" },
                                 react_1.default.createElement("div", { className: "center" },
-                                    react_1.default.createElement("img", { className: "logo-svg", src: "/images/ieeeualbany.svg", alt: "server-header-img" })))))),
+                                    react_1.default.createElement("img", { className: "logo-svg", src: ieeeualbany_svg_1.default, alt: "server-header-img" })))))),
                 react_1.default.createElement("section", { id: "about" },
                     react_1.default.createElement("div", { className: "text-center" },
                         react_1.default.createElement("p", { className: "title" }, "All your side projects, in one convenient location"),
