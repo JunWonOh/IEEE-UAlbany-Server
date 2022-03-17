@@ -23,7 +23,8 @@ connection.once('open', () => {
 
 const usersRouter = require('./routes/users.routes');
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("frontend/build"))
+app.use(express.static(__dirname + "/frontend/build"));
+app.use(app.router);
 app.use('/users', usersRouter);
 
 
@@ -45,11 +46,6 @@ app.get('/login', function(req, res) {
 })
 
 // Handling GET / Request
-app.use('/', (req, res) => {
-    console.log('printing user from USE');
-    console.log(JSON.stringify(req.user));
-    res.send(req.user);
-})
 app.get('/', (req, res) => {
     console.log('printing user from GET');
     console.log(JSON.stringify(req.user));
