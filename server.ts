@@ -40,6 +40,7 @@ app.use(
 );
 
 app.get('/login', function(req, res) {
+    console.log('logging in.......');
     res.send("Logging in");
 })
 

@@ -29,6 +29,7 @@ app.use(auth({
     secret: process.env.SECRET
 }));
 app.get('/login', function (req, res) {
+    console.log('logging in.......');
     res.send("Logging in");
 });
 // Handling GET / Request
