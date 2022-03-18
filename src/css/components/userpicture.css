@@ -1,15 +1,11 @@
-.rotate {
-    animation: rotation 8s infinite linear;
-  }
-  
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  }
+.fadeio {
+    opacity: 1;
+    animation: fade 1s infinite linear;
+}
+@keyframes fade {
+  0%,100% { opacity: 0.3 }
+  50% { opacity: 1 }
+}
 
 .frame{
     height: 50px;

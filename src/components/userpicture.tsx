@@ -8,7 +8,7 @@ export default function UserPicture() {
     const {user, isAuthenticated, isLoading, loginWithRedirect} = useAuth0();
     if (isLoading) {
         return <div className="frame">
-            <img className="rotate" src={logo} alt="User"/>
+            <img className="fadeio" src={logo} alt="User"/>
         </div>;
     }
 
@@ -18,7 +18,10 @@ export default function UserPicture() {
             <div className="frame">
                 <img src={user.picture} alt={user.name} />
             </div>}
-            {!isAuthenticated && <div><button className="btn btn-outline-light rounded-pill" type="submit" onClick={()=> loginWithRedirect()}>Sign in/Up</button></div>}
+            {!isAuthenticated && 
+            <div>
+                <button className="btn btn-outline-light rounded-pill" type="submit" onClick={()=> loginWithRedirect()}>Sign in/Up</button>
+            </div>}
         </>
     );
 }

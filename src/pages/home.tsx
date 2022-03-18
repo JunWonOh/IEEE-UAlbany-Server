@@ -55,7 +55,6 @@ export default function Home() {
                             <div className="home-div flex-container">
                             <div className="home-description-div frosted-container container">
                                 <div className="center">
-                                    <UserInfo></UserInfo>
                                     <p className="title">UAlbany IEEE Server{nickname}</p>
                                     <p className="description">A free cloud hosting service for UAlbany IEEE club members.</p>
                                     <div className="home-buttons">
