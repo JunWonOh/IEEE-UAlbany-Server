@@ -17,6 +17,7 @@ export default function Home() {
 
     useEffect(()=> {
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
+            console.log(response.data);
             setNickname(response.data.nickname);
         })
         .catch((error) => {

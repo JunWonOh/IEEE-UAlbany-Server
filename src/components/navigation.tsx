@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import '../css/components/navigation.css'
 import logo from '../images/transparent logo.png'
+import { useAuth0 } from '@auth0/auth0-react'
 
+// {"nickname":"Jun Won","name":"Jun Won","picture":"https://cdn.discordapp.com/avatars/227577632265469952/88de9a39c6ce38a7d818c47df56fa817.png","updated_at":"2022-03-18T02:33:43.624Z","email":"junwon669@gmail.com","email_verified":true,"sub":"oauth2|discord|227577632265469952"}
 
 // function signIn(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 //     // e.preventDefault();
@@ -17,6 +19,7 @@ import logo from '../images/transparent logo.png'
 // }
 
 export default function Navigation() {
+    const { loginWithRedirect } = useAuth0();
     return (
             <div id="App-navigation">
                 <nav className="navbar navbar-expand-lg">
@@ -38,7 +41,7 @@ export default function Navigation() {
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <button className="btn btn-outline-light rounded-pill" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Sign in/Up</button>
+                            <button className="btn btn-outline-light rounded-pill" type="submit" onClick={()=> loginWithRedirect()}>Sign in/Up</button>
                         </form>
                         </div>
                     </div>

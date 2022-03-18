@@ -14,6 +14,7 @@ export default function Home() {
     };
     useEffect(function () {
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(function (response) {
+            console.log(response.data);
             setNickname(response.data.nickname);
         })
             .catch(function (error) {
