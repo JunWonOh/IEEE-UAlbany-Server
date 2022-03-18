@@ -19,7 +19,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 // }
 
 export default function Navigation() {
-    const { loginWithRedirect,logout, user } = useAuth0();
+    const { loginWithRedirect,logout } = useAuth0();
     return (
             <div id="App-navigation">
                 <nav className="navbar navbar-expand-lg">
@@ -42,7 +42,7 @@ export default function Navigation() {
                         </ul>
                         <form className="d-flex">
                             <button className="btn btn-outline-light rounded-pill" type="submit" onClick={()=> loginWithRedirect()}>Sign in/Up</button>
-                            <button onClick={()=> logout()}>Logout{user.name}</button>
+                            <button onClick={()=> logout()}>Logout</button>
                         </form>
                         </div>
                     </div>

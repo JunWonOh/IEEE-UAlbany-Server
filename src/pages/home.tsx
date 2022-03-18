@@ -3,9 +3,9 @@ import axios from 'axios';
 import Navigation from '../components/navigation';
 import '../css/pages/home.css'
 import logo_svg from '../images/ieeeualbany.svg'
-
+import { useAuth0 } from '@auth0/auth0-react';
 export default function Home() {
-
+    const {user, isAuthenticated, isLoading} = useAuth0();
     const [animation, setAnimation] = useState("animation-on");
     const [nickname, setNickname] = useState("Nickname");
     const toggleAnimation = () => {
@@ -16,6 +16,8 @@ export default function Home() {
     };
 
     useEffect(()=> {
+        console.log(user);
+        console.log(user.name);
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
             console.log(response.data);
             setNickname(response.data.nickname);
@@ -43,6 +45,10 @@ export default function Home() {
     }
 
     window.addEventListener("scroll", reveal);
+
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="App">
