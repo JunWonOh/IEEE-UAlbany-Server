@@ -5,8 +5,11 @@
   body {
       background-color: #16111f;
       color: white;
-      /* font-family: 'Ubuntu Mono', monospace, Arial; */
       font-weight: 400;
+      height: 100%;
+  }
+  html {
+      height: 100%;
   }
   .flex-container {
       flex-direction: row;
@@ -73,28 +76,6 @@
       height: 100vh;
       min-height: 400px; /* EDIT TO FIX SCALING ISSUES */
   }
-  .form-check-input:active, .form-check-input:focus {
-    box-shadow: none;
-    border-color: none;
-  }
-  .form-check-input:checked, .form-check-input:active:checked {
-      background-color: orange;
-      border-color:orange;
-      color:orange;
-      box-shadow: rgba(235, 186, 52, 0.25) 0px 54px 55px, rgba(235, 186, 52, 0.12) 0px -12px 30px, rgba(235, 186, 52, 0.12) 0px 4px 6px, rgba(235, 186, 52, 0.17) 0px 12px 13px, rgba(235, 186, 52, 0.09) 0px -3px 5px;
-  }
-  .form-check {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 10px;
-  }
-  .animation-on {
-      background-image: url('../../images/conways.gif');
-  }
-  .animation-off {
-    background-image: url('../../images/dark-uni-bg.png');
-  }
   .home-description-div,
   .home-image-div {
       flex-basis: 100%;
@@ -141,3 +122,62 @@
   .questions {
       margin-top: 20px;
   }
+
+/* TEXT HOVERING ANIMATION */
+.text-container{
+   display: flex;
+   align-items:center;
+   justify-content:center;
+}
+.reveal{
+  position: relative;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* TOGGLE BACKGROUND GIF */
+.form-check-input:active, .form-check-input:focus {
+    box-shadow: none;
+    border-color: none;
+  }
+  .form-check-input:checked, .form-check-input:active:checked {
+      background-color: orange;
+      border-color:orange;
+      color:orange;
+      box-shadow: rgba(235, 186, 52, 0.25) 0px 54px 55px, rgba(235, 186, 52, 0.12) 0px -12px 30px, rgba(235, 186, 52, 0.12) 0px 4px 6px, rgba(235, 186, 52, 0.17) 0px 12px 13px, rgba(235, 186, 52, 0.09) 0px -3px 5px;
+  }
+  .form-check {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+
+  /* PARALLAX SCROLLING - ALSO SET BODY AND HTML TO 100% HEIGHT */
+  .animation-on, .animation-off {
+        /* Full height */
+        height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+  }
+  .animation-on {
+      background-image: url('../../images/conways.gif');
+  }
+  .animation-off {
+    background-image: url('../../images/dark-uni-bg.png');
+  }
+  /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+    @media only screen and (max-device-width: 1366px) {
+        .animation-on, .animation-off{
+        background-attachment: scroll;
+        }
+    }
