@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import '../css/components/navigation.css'
 import logo from '../images/transparent logo.png'
+import UserPicture from '../components/userpicture';
 import { useAuth0 } from '@auth0/auth0-react'
 
 // {"nickname":"Jun Won","name":"Jun Won","picture":"https://cdn.discordapp.com/avatars/227577632265469952/88de9a39c6ce38a7d818c47df56fa817.png","updated_at":"2022-03-18T02:33:43.624Z","email":"junwon669@gmail.com","email_verified":true,"sub":"oauth2|discord|227577632265469952"}
@@ -19,7 +20,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 // }
 
 export default function Navigation() {
-    const { loginWithRedirect,logout } = useAuth0();
+    const { loginWithRedirect, logout } = useAuth0();
     return (
             <div id="App-navigation">
                 <nav className="navbar navbar-expand-lg">
@@ -41,8 +42,8 @@ export default function Navigation() {
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <button className="btn btn-outline-light rounded-pill" type="submit" onClick={()=> loginWithRedirect()}>Sign in/Up</button>
-                            <button onClick={()=> logout()}>Logout</button>
+                            <UserPicture/>
+                            {/* <button onClick={()=> logout()}>Logout</button> */}
                         </form>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/components/navigation.css';
 import logo from '../images/transparent logo.png';
+import UserPicture from '../components/userpicture';
 import { useAuth0 } from '@auth0/auth0-react';
 // {"nickname":"Jun Won","name":"Jun Won","picture":"https://cdn.discordapp.com/avatars/227577632265469952/88de9a39c6ce38a7d818c47df56fa817.png","updated_at":"2022-03-18T02:33:43.624Z","email":"junwon669@gmail.com","email_verified":true,"sub":"oauth2|discord|227577632265469952"}
 // function signIn(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -15,7 +16,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 //     window.location.href = '/login';
 // }
 export default function Navigation() {
-    var loginWithRedirect = useAuth0().loginWithRedirect;
+    var _a = useAuth0(), loginWithRedirect = _a.loginWithRedirect, logout = _a.logout;
     return (React.createElement("div", { id: "App-navigation" },
         React.createElement("nav", { className: "navbar navbar-expand-lg" },
             React.createElement("div", { className: "container-fluid" },
@@ -38,5 +39,5 @@ export default function Navigation() {
                                 "About",
                                 React.createElement("span", { className: "blink" }, "_")))),
                     React.createElement("form", { className: "d-flex" },
-                        React.createElement("button", { className: "btn btn-outline-light rounded-pill", type: "submit", onClick: function () { return loginWithRedirect(); } }, "Sign in/Up")))))));
+                        React.createElement(UserPicture, null)))))));
 }
