@@ -20,7 +20,6 @@ export default function Home() {
     useEffect(()=> {
         axios.get(process.env.BACKEND_URL + "/").then(response => {
             console.log(process.env.BACKEND_URL);
-            console.log(JSON.stringify(response));
         })
         .catch((error) => {
             console.log(error);
