@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Navigation from '../components/navigation';
@@ -16,7 +18,7 @@ export default function Home() {
     };
 
     useEffect(()=> {
-        axios.get('/').then(response => {
+        axios.get(process.env.BACKEND_URL + "/").then(response => {
             console.log(JSON.stringify(response));
         })
         .catch((error) => {
