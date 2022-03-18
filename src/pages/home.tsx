@@ -4,8 +4,9 @@ import Navigation from '../components/navigation';
 import '../css/pages/home.css'
 import logo_svg from '../images/ieeeualbany.svg'
 import { useAuth0 } from '@auth0/auth0-react';
+import UserInfo from '../components/userinfo';
+
 export default function Home() {
-    const {user, isAuthenticated, isLoading} = useAuth0();
     const [animation, setAnimation] = useState("animation-on");
     const [nickname, setNickname] = useState("Nickname");
     const toggleAnimation = () => {
@@ -16,8 +17,6 @@ export default function Home() {
     };
 
     useEffect(()=> {
-        console.log(user);
-        console.log(user.name);
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
             console.log(response.data);
             setNickname(response.data.nickname);
@@ -46,10 +45,6 @@ export default function Home() {
 
     window.addEventListener("scroll", reveal);
 
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <div className="App">
             <header className="App-header">
@@ -60,6 +55,7 @@ export default function Home() {
                             <div className="home-div flex-container">
                             <div className="home-description-div frosted-container container">
                                 <div className="center">
+                                    <UserInfo></UserInfo>
                                     <p className="title">UAlbany IEEE Server{nickname}</p>
                                     <p className="description">A free cloud hosting service for UAlbany IEEE club members.</p>
                                     <div className="home-buttons">
