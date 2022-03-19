@@ -11,9 +11,9 @@ function App() {
       <SideBarNavigation></SideBarNavigation>
       <Router>
         <Routes>
+          <Route path="*" element={<PageNotFound/>} />
           <Route path="/" element={<Home/>} />
           <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route element={<PageNotFound/>} />
         </Routes>
       </Router>
     </div>
