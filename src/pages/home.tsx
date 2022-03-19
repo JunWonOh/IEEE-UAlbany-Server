@@ -3,11 +3,12 @@ import axios from 'axios';
 import Navigation from '../components/navigation';
 import '../css/pages/home.css'
 import logo_svg from '../images/ieeeualbany.svg'
+import { useAuth0 } from '@auth0/auth0-react';
+import UserInfo from '../components/userinfo';
 
 export default function Home() {
-
     const [animation, setAnimation] = useState("animation-on");
-    
+    const [nickname, setNickname] = useState("Nickname");
     const toggleAnimation = () => {
         if (animation === "animation-on")
             setAnimation("animation-off");
@@ -16,10 +17,12 @@ export default function Home() {
     };
 
     useEffect(()=> {
-        axios.get('/').then(response => {
-            console.log(JSON.stringify(response));
+        axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
+            console.log(response.data);
+            setNickname(response.data.nickname);
         })
         .catch((error) => {
+            console.log('error!');
             console.log(error);
         })
     })
@@ -50,26 +53,26 @@ export default function Home() {
                     <section id="home">
                         <div className={animation}>
                             <div className="home-div flex-container">
-                            <div className="home-description-div frosted-container container">
-                                <div className="center">
-                                    <p className="title">UAlbany IEEE Server</p>
-                                    <p className="description">A free cloud hosting service for UAlbany IEEE club members.</p>
-                                    <div className="home-buttons">
-                                        <button className="btn btn-outline-light btn-parent-site" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Parent Site</button>
-                                        <button className="btn btn-primary btn-get-started" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Get Started</button>
-                                        <div className="form-check form-switch">
-                                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={toggleAnimation}></input>
-                                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Disable animation</label>
+                                <div className="home-description-div frosted-container container">
+                                    <div className="center">
+                                        <p className="title">UAlbany IEEE Server{nickname}</p>
+                                        <p className="description">A free cloud hosting service for UAlbany IEEE club members.</p>
+                                        <div className="home-buttons">
+                                            <button className="btn btn-outline-light btn-parent-site" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Parent Site</button>
+                                            <button className="btn btn-primary btn-get-started" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Get Started</button>
+                                            <div className="form-check form-switch">
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={toggleAnimation}></input>
+                                                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Disable animation</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="home-image-div container">
-                                <div className="center">
-                                    <img className="logo-svg" src={logo_svg} alt="server-header-img" />
+                                <div className="home-image-div container">
+                                    <div className="center">
+                                        <img className="logo-svg" src={logo_svg} alt="server-header-img" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </section>
                     <section id="about">
