@@ -6,6 +6,14 @@ import logo from '../images/design_0.png';
 
 export default function UserPicture() {
     const {user, isAuthenticated, isLoading, loginWithRedirect} = useAuth0();
+    
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+    document.getElementById("profile-button").addEventListener("contextmenu ", function(){
+        return false;
+     });
+
     if (isLoading) {
         return <div className="frame">
             <img className="fadeio" src={logo} alt="User"/>
@@ -15,8 +23,11 @@ export default function UserPicture() {
     return (
         <>
             {isAuthenticated && 
-            <div className="frame">
-                <img src={user.picture} alt={user.name} />
+            <div id="profile-button" onClick={()=>openNav()}>
+                <div className="frame">
+                    <img src={user.picture} alt={user.name} />
+                </div>
+                <i className="fas fa-caret-down"></i>
             </div>}
             {!isAuthenticated && 
             <div>

@@ -6,7 +6,11 @@
 .success {
     height: 100%;
 }
-
+@media (max-width: 1000px) {
+    .text .center {
+        width: 80%;
+    }
+}
 .image .center {
     width: 100%;
 }
