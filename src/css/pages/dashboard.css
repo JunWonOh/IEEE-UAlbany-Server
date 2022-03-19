@@ -37,5 +37,6 @@
 
   .pnf {
       color: #ebba34;
-      font-size: larger;
+      font-size: 4rem;
+      font-weight: bold;
   }

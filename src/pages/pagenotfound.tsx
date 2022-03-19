@@ -30,17 +30,17 @@ export default function PageNotFound() {
             <div className="offset">
                 <section id="instructions">
                     <div className="success flex-container">
+                        <div className="container text">
+                            <div className="center reveal">
+                                <h1 className="pnf">404</h1>
+                                <p>Page not found. It could be still under development.</p>
+                            </div>
+                        </div>
                         <div className="container image">
                             <div className="center">
                                 <div className="frame-celeb">
                                     <img src={pnf} alt="404.gif"></img>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="container text">
-                            <div className="center reveal">
-                                <h1 className="pnf">404</h1>
-                                <p>Page not found :(</p>
                             </div>
                         </div>
                     </div>
