@@ -34,3 +34,8 @@
   .success .image {
       width: 40%;
   }
+
+  .pnf {
+      color: #ebba34;
+      font-size: larger;
+  }

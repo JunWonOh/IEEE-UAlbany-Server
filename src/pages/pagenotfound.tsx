@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import '../css/pages/home.css'
 import '../css/pages/dashboard.css'
 import Navigation from '../components/navigation'
-import celebration from '../images/celebration.gif'
+import pnf from '../images/404.gif'
 
-export default function Dashboard() {
+export default function PageNotFound() {
 
     const reveal = () => {
         var reveals = document.querySelectorAll(".reveal");
@@ -30,20 +30,17 @@ export default function Dashboard() {
             <div className="offset">
                 <section id="instructions">
                     <div className="success flex-container">
-                        <div className="container text">
-                            <div className="center reveal">
-                                <h1>Almost there!</h1>
-                                <p>Visit <b>#bot-commands</b> in the UAlbany IEEE Discord server and type <b>!verify.</b> 
-                                    The "IEEE Server" bot will message you with further instructions 
-                                    to SSH into the server. After that, you can refresh this page to 
-                                    access your dashboard.</p>
-                            </div>
-                        </div>
                         <div className="container image">
                             <div className="center">
                                 <div className="frame-celeb">
-                                    <img src={celebration} alt="celebration.gif"></img>
+                                    <img src={pnf} alt="404.gif"></img>
                                 </div>
+                            </div>
+                        </div>
+                        <div className="container text">
+                            <div className="center reveal">
+                                <h1 className="pnf">404</h1>
+                                <p>Page not found :(</p>
                             </div>
                         </div>
                     </div>
