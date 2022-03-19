@@ -20,7 +20,7 @@ export default function UserPicture() {
     return (
         <>
             {isAuthenticated && 
-            <div onClick={()=>openNav()}>
+            <div className="flex-container" onClick={()=>openNav()}>
                 <div className="frame">
                     <img src={user.picture} alt={user.name} />
                 </div>

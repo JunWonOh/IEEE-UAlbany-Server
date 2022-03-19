@@ -8,16 +8,13 @@ export default function UserPicture() {
     function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
     }
-    // document.getElementById("profile-button").addEventListener("contextmenu ", function(){
-    //     return false;
-    //  });
     if (isLoading) {
         return React.createElement("div", { className: "frame" },
             React.createElement("img", { className: "fadeio", src: logo, alt: "User" }));
     }
     return (React.createElement(React.Fragment, null,
         isAuthenticated &&
-            React.createElement("div", { id: "profile-button", onClick: function () { return openNav(); } },
+            React.createElement("div", { className: "flex-container", onClick: function () { return openNav(); } },
                 React.createElement("div", { className: "frame" },
                     React.createElement("img", { src: user.picture, alt: user.name })),
                 React.createElement("i", { className: "fas fa-caret-down" })),

@@ -25,3 +25,15 @@
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
   }
+
+  .flex-container:hover > .frame {
+    outline: 2px solid #ebba34;
+  }
+
+  .flex-container:hover > .fa-caret-down {
+    color: #ebba34;
+  }
+
+  .fa-caret-down {
+    margin-left: 10px;
+  }
