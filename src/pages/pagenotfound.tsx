@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import '../css/pages/home.css'
 import '../css/pages/dashboard.css'
 import Navigation from '../components/navigation'
 import pnf from '../images/404.gif'
 
 export default function PageNotFound() {
+    useEffect(()=>{
+        document.title = "Error 404 | UAlbany IEEE Server";
+    })
 
     const reveal = () => {
         var reveals = document.querySelectorAll(".reveal");
@@ -30,10 +33,10 @@ export default function PageNotFound() {
             <div className="offset">
                 <section id="instructions">
                     <div className="success flex-container">
-                        <div className="container text">
-                            <div className="center reveal">
+                        <div className="container text reveal">
+                            <div className="center">
                                 <h1 className="pnf">404</h1>
-                                <p>Page not found. It could be still under development.</p>
+                                <p>The page you are looking for doesn't exist or it could be under development.</p>
                             </div>
                         </div>
                         <div className="container image">

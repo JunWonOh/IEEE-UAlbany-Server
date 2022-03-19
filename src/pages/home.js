@@ -5,7 +5,6 @@ import '../css/pages/home.css';
 import logo_svg from '../images/ieeeualbany.svg';
 export default function Home() {
     var _a = useState("animation-on"), animation = _a[0], setAnimation = _a[1];
-    var _b = useState("Nickname"), nickname = _b[0], setNickname = _b[1];
     var toggleAnimation = function () {
         if (animation === "animation-on")
             setAnimation("animation-off");
@@ -15,7 +14,6 @@ export default function Home() {
     useEffect(function () {
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(function (response) {
             console.log(response.data);
-            setNickname(response.data.nickname);
         })
             .catch(function (error) {
             console.log('error!');
@@ -46,9 +44,7 @@ export default function Home() {
                         React.createElement("div", { className: "home-div flex-container" },
                             React.createElement("div", { className: "home-description-div frosted-container container" },
                                 React.createElement("div", { className: "center" },
-                                    React.createElement("p", { className: "title" },
-                                        "UAlbany IEEE Server",
-                                        nickname),
+                                    React.createElement("p", { className: "title" }, "UAlbany IEEE Server"),
                                     React.createElement("p", { className: "description" }, "A free cloud hosting service for UAlbany IEEE club members."),
                                     React.createElement("div", { className: "home-buttons" },
                                         React.createElement("button", { className: "btn btn-outline-light btn-parent-site", type: "submit", onClick: function (e) { e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'; } }, "Parent Site"),
