@@ -10,9 +10,6 @@ export default function UserPicture() {
     function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
     }
-    // document.getElementById("profile-button").addEventListener("contextmenu ", function(){
-    //     return false;
-    //  });
 
     if (isLoading) {
         return <div className="frame">
@@ -23,7 +20,7 @@ export default function UserPicture() {
     return (
         <>
             {isAuthenticated && 
-            <div id="profile-button" onClick={()=>openNav()}>
+            <div onClick={()=>openNav()}>
                 <div className="frame">
                     <img src={user.picture} alt={user.name} />
                 </div>
