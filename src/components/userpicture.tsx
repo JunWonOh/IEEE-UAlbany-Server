@@ -10,9 +10,9 @@ export default function UserPicture() {
     function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
     }
-    document.getElementById("profile-button").addEventListener("contextmenu ", function(){
-        return false;
-     });
+    // document.getElementById("profile-button").addEventListener("contextmenu ", function(){
+    //     return false;
+    //  });
 
     if (isLoading) {
         return <div className="frame">

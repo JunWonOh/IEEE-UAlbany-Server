@@ -3,7 +3,6 @@ import axios from 'axios';
 import '../css/components/navigation.css'
 import logo from '../images/transparent logo.png'
 import UserPicture from '../components/userpicture';
-import { useAuth0 } from '@auth0/auth0-react'
 
 // {"nickname":"Jun Won","name":"Jun Won","picture":"https://cdn.discordapp.com/avatars/227577632265469952/88de9a39c6ce38a7d818c47df56fa817.png","updated_at":"2022-03-18T02:33:43.624Z","email":"junwon669@gmail.com","email_verified":true,"sub":"oauth2|discord|227577632265469952"}
 

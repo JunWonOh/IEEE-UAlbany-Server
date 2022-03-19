@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import '../css/pages/sidebar.css';
+import '../css/components/sidebar.css';
 export default function SideBarNavigation() {
     var logout = useAuth0().logout;
     function closeNav() {
