@@ -1,0 +1,32 @@
+#instructions {
+    height: 100vh;
+    width: 100%;
+}
+
+.success {
+    height: 100%;
+}
+
+.image .center {
+    width: 100%;
+}
+.frame-celeb{
+    overflow: hidden;
+    height: fit-content;
+    width: 50%;
+    min-width: 120px;
+    outline:3px solid #ebba34;
+    border-radius: 50%;
+  }
+  .frame-celeb img {
+      width: 100%;
+  }
+
+  .success .text {
+      width: 60%;
+      padding: 0;
+  }
+
+  .success .image {
+      width: 40%;
+  }

@@ -7,12 +7,13 @@ export default function UserPicture() {
     var _a = useAuth0(), user = _a.user, isAuthenticated = _a.isAuthenticated, isLoading = _a.isLoading, loginWithRedirect = _a.loginWithRedirect;
     if (isLoading) {
         return React.createElement("div", { className: "frame" },
-            React.createElement("img", { className: "rotate", src: logo, alt: "User" }));
+            React.createElement("img", { className: "fadeio", src: logo, alt: "User" }));
     }
     return (React.createElement(React.Fragment, null,
         isAuthenticated &&
             React.createElement("div", { className: "frame" },
                 React.createElement("img", { src: user.picture, alt: user.name })),
-        !isAuthenticated && React.createElement("div", null,
-            React.createElement("button", { className: "btn btn-outline-light rounded-pill", type: "submit", onClick: function () { return loginWithRedirect(); } }, "Sign in/Up"))));
+        !isAuthenticated &&
+            React.createElement("div", null,
+                React.createElement("button", { className: "btn btn-outline-light rounded-pill", type: "submit", onClick: function () { return loginWithRedirect(); } }, "Sign in/Up"))));
 }

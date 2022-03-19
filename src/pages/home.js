@@ -3,7 +3,6 @@ import axios from 'axios';
 import Navigation from '../components/navigation';
 import '../css/pages/home.css';
 import logo_svg from '../images/ieeeualbany.svg';
-import UserInfo from '../components/userinfo';
 export default function Home() {
     var _a = useState("animation-on"), animation = _a[0], setAnimation = _a[1];
     var _b = useState("Nickname"), nickname = _b[0], setNickname = _b[1];
@@ -47,7 +46,6 @@ export default function Home() {
                         React.createElement("div", { className: "home-div flex-container" },
                             React.createElement("div", { className: "home-description-div frosted-container container" },
                                 React.createElement("div", { className: "center" },
-                                    React.createElement(UserInfo, null),
                                     React.createElement("p", { className: "title" },
                                         "UAlbany IEEE Server",
                                         nickname),
