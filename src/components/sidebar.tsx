@@ -13,7 +13,8 @@ export default function SideBarNavigation(props) {
             id: props.id,
             avatar: props.picture,
             nickname: props.name,
-            email: props.email
+            email: props.email,
+            accesskey: process.env.REACT_APP_ACCESS_KEY
         }
         axios.post("https://ieeeualbany-be.herokuapp.com/users", userData).then(response => {
             console.log(response.data);
@@ -23,7 +24,8 @@ export default function SideBarNavigation(props) {
         })
     })
 
-    function closeNav() {
+    function closeNav(e) {
+        e.preventDefault();
         document.getElementById("mySidebar").style.width = "0";
     }
 
@@ -40,7 +42,7 @@ export default function SideBarNavigation(props) {
     }
     return (
         <div id="mySidebar" className="sidebar">
-            <a href="javascript:void(0)" className="closebtn" onClick={()=>closeNav()}>&times;</a>
+            <a href="#" className="closebtn" onClick={(e)=>closeNav(e)}>&times;</a>
             <div className="account-info">
                 <div className="frame-large">
                     <img src={props.picture} alt="avatar"></img>
@@ -52,7 +54,7 @@ export default function SideBarNavigation(props) {
             </div>
             <hr/>
             <a href="/dashboard" className="side-item">My Dashboard</a>
-            <a href="javascript:void(0)" className="side-item">Search</a>
+            <a href="/search" className="side-item">Search</a>
             <a href="/members" className="side-item">Members</a>
             <a href="javascript:void(0)" className="side-item" onClick={ ()=>logout() }>Log Out</a>
         </div>

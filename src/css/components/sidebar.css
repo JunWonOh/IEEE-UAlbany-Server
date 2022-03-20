@@ -60,14 +60,7 @@
   /* When you mouse over the navigation links, change their color */
   .side-item:hover {
     color: #ebba34;
-    background: rgba(80, 31, 161, 0.1);
-  }
-
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .side-item:hover {
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-    }
+    background: rgba(80, 31, 161, 0.2);
   }
 
   /* Position and style the close button (top right corner) */

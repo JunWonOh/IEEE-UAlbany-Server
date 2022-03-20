@@ -8,6 +8,7 @@ import UserInfo from '../components/userinfo';
 
 export default function Home() {
     const [animation, setAnimation] = useState("animation-on");
+    const [users, setUsers] = useState([]);
 
     const toggleAnimation = () => {
         if (animation === "animation-on") {
@@ -21,20 +22,30 @@ export default function Home() {
     };
 
     useEffect(()=> {
-        setAnimation(window.localStorage.getItem("animation"));
+        if (window.localStorage.getItem("animation") == "")
+            setAnimation("animation-on");
+        else
+            setAnimation(window.localStorage.getItem("animation"));
         const check_btn = document.getElementsByClassName("form-check-input")[0] as unknown as HTMLInputElement;
         if (window.localStorage.getItem("animation") == "animation-on") 
             check_btn.checked = false;
         else 
             check_btn.checked = true;
-        
-        axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
+
+        const data = {
+            accesskey: process.env.REACT_APP_ACCESS_KEY
+        }
+        axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", data).then(response => {
             console.log(response.data);
         })
         .catch((error) => {
             console.log(error);
         })
     })
+
+    const getRecentMembers = () => {
+        
+    }
     
     const reveal = () => {
         var reveals = document.querySelectorAll(".reveal");
