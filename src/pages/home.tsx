@@ -32,10 +32,7 @@ export default function Home() {
         else 
             check_btn.checked = true;
 
-        const data = {
-            accesskey: process.env.REACT_APP_ACCESS_KEY
-        }
-        axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", {data}).then(response => {
+        axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", {params: {accesskey: process.env.REACT_APP_ACCESS_KEY}}).then(response => {
             console.log(response.data);
         })
         .catch((error) => {
