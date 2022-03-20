@@ -32,16 +32,17 @@ export default function Home() {
         else 
             check_btn.checked = true;
 
+        getRecentMembers();
+    })
+
+    const getRecentMembers = () => {
         axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", {params: {accesskey: process.env.REACT_APP_ACCESS_KEY}}).then(response => {
-            console.log(response.data);
+            setUsers([...users, response.data[0]])
+            console.log(users);
         })
         .catch((error) => {
             console.log(error);
         })
-    })
-
-    const getRecentMembers = () => {
-        
     }
     
     const reveal = () => {
