@@ -3,7 +3,7 @@ import '../css/pages/home.css'
 import '../css/components/userpicture.css'
 import { useAuth0 } from '@auth0/auth0-react';
 import logo from '../images/design_0.png';
-
+import SideBarNavigation from './sidebar';
 export default function UserPicture() {
     const {user, isAuthenticated, isLoading, loginWithRedirect} = useAuth0();
     
@@ -20,11 +20,14 @@ export default function UserPicture() {
     return (
         <>
             {isAuthenticated && 
-            <div className="flex-container" onClick={()=>openNav()}>
-                <div className="frame">
-                    <img src={user.picture} alt={user.name} />
+            <div>
+                <div className="flex-container" onClick={()=>openNav()}>
+                    <div className="frame">
+                        <img src={user.picture} alt={user.name} />
+                    </div>
+                    <i className="fas fa-caret-down"></i>
                 </div>
-                <i className="fas fa-caret-down"></i>
+                <SideBarNavigation picture={user.picture} name={user.name} id ={user.sub.split("|")[2]}></SideBarNavigation>
             </div>}
             {!isAuthenticated && 
             <div>

@@ -21,7 +21,7 @@
     }
 }
   /* The sidebar links */
-  .sidebar a {
+  .sidebar a, .account-info{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -29,10 +29,40 @@
     display: block;
     transition: 0.3s;
   }
+  .account-info {
+    margin: 0px;
+    font-size: 1rem;
+  }
+
+  .id-number {
+    color:#4d4d4d;
+  }
+
+  .frame-large{
+    overflow: hidden;
+    height: fit-content;
+    width: 50%;
+    min-width: 120px;
+    outline:3px solid white;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .frame-large img {
+      width: 100%;
+  }
+  hr {
+    height: 2px;
+    color: white;
+  }
+
+  .flex-container {
+    font-size: 1rem;
+  }
   
   /* When you mouse over the navigation links, change their color */
   .sidebar a:hover {
     color: #ebba34;
+    box-shadow: 0 4px 2px -2px #ebba34;
   }
   
   /* Position and style the close button (top right corner) */

@@ -8,18 +8,28 @@ import UserInfo from '../components/userinfo';
 
 export default function Home() {
     const [animation, setAnimation] = useState("animation-on");
-    const [nickname, setNickname] = useState("Nickname");
+
     const toggleAnimation = () => {
-        if (animation === "animation-on")
+        if (animation === "animation-on") {
+            window.localStorage.setItem("animation", "animation-off");
             setAnimation("animation-off");
-        else 
+        }
+        else {
+            window.localStorage.setItem("animation", "animation-on");
             setAnimation("animation-on");
+        }
     };
 
     useEffect(()=> {
+        setAnimation(window.localStorage.getItem("animation"));
+        const check_btn = document.getElementsByClassName("form-check-input")[0] as unknown as HTMLInputElement;
+        if (window.localStorage.getItem("animation") == "animation-on") {
+            check_btn.checked = false;
+        } else {
+            check_btn.checked = true;
+        }
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
             console.log(response.data);
-            setNickname(response.data.nickname);
         })
         .catch((error) => {
             console.log('error!');
@@ -55,7 +65,7 @@ export default function Home() {
                             <div className="home-div flex-container">
                                 <div className="home-description-div frosted-container container">
                                     <div className="center">
-                                        <p className="title">UAlbany IEEE Server{nickname}</p>
+                                        <p className="title">UAlbany IEEE Server</p>
                                         <p className="description">A free cloud hosting service for UAlbany IEEE club members.</p>
                                         <div className="home-buttons">
                                             <button className="btn btn-outline-light btn-parent-site" type="submit" onClick={(e) => {e.preventDefault(); window.location.href = 'https://ieeeualbany.herokuapp.com/login'}}>Parent Site</button>
