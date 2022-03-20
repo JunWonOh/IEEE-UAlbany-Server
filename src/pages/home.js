@@ -6,12 +6,24 @@ import logo_svg from '../images/ieeeualbany.svg';
 export default function Home() {
     var _a = useState("animation-on"), animation = _a[0], setAnimation = _a[1];
     var toggleAnimation = function () {
-        if (animation === "animation-on")
+        if (animation === "animation-on") {
+            window.localStorage.setItem("animation", "animation-off");
             setAnimation("animation-off");
-        else
+        }
+        else {
+            window.localStorage.setItem("animation", "animation-on");
             setAnimation("animation-on");
+        }
     };
     useEffect(function () {
+        setAnimation(window.localStorage.getItem("animation"));
+        var check_btn = document.getElementsByClassName("form-check-input")[0];
+        if (window.localStorage.getItem("animation") == "animation-on") {
+            check_btn.checked = false;
+        }
+        else {
+            check_btn.checked = true;
+        }
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(function (response) {
             console.log(response.data);
         })

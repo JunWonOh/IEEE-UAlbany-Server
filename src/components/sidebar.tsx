@@ -12,9 +12,9 @@ export default function SideBarNavigation(props) {
     }
 
     function getName() {
-        if (props.name.length > 20) {
+        if (props.name.length > 12) {
             return (
-                <div>Hi {props.name.substring(0, 20) + '...'}</div>
+                <div>Hi {props.name.substring(0, 12) + '...'}</div>
             )
         } else {
             return (

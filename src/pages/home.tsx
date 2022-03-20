@@ -10,13 +10,24 @@ export default function Home() {
     const [animation, setAnimation] = useState("animation-on");
 
     const toggleAnimation = () => {
-        if (animation === "animation-on")
+        if (animation === "animation-on") {
+            window.localStorage.setItem("animation", "animation-off");
             setAnimation("animation-off");
-        else 
+        }
+        else {
+            window.localStorage.setItem("animation", "animation-on");
             setAnimation("animation-on");
+        }
     };
 
     useEffect(()=> {
+        setAnimation(window.localStorage.getItem("animation"));
+        const check_btn = document.getElementsByClassName("form-check-input")[0] as unknown as HTMLInputElement;
+        if (window.localStorage.getItem("animation") == "animation-on") {
+            check_btn.checked = false;
+        } else {
+            check_btn.checked = true;
+        }
         axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
             console.log(response.data);
         })

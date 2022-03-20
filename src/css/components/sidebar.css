@@ -62,6 +62,7 @@
   /* When you mouse over the navigation links, change their color */
   .sidebar a:hover {
     color: #ebba34;
+    box-shadow: 0 4px 2px -2px #ebba34;
   }
   
   /* Position and style the close button (top right corner) */
