@@ -32,18 +32,18 @@ export default function Home() {
         else 
             check_btn.checked = true;
 
-        getRecentMembers();
+        // getRecentMembers();
     })
 
-    const getRecentMembers = () => {
-        axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", {params: {accesskey: process.env.REACT_APP_ACCESS_KEY}}).then(response => {
-            setUsers([...users, response.data[0]])
-            console.log(users);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-    }
+    // const getRecentMembers = () => {
+    //     axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", {params: {accesskey: process.env.REACT_APP_ACCESS_KEY}}).then(response => {
+    //         setUsers([...users, response.data[0]])
+    //         console.log(users);
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     })
+    // }
     
     const reveal = () => {
         var reveals = document.querySelectorAll(".reveal");
