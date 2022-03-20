@@ -8,7 +8,7 @@ import PageNotFound from './pages/pagenotfound';
 function App() {
   return (
     <div>
-      <SideBarNavigation></SideBarNavigation>
+     
       <Router>
         <Routes>
           <Route path="*" element={<PageNotFound/>} />
