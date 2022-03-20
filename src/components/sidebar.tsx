@@ -56,7 +56,7 @@ export default function SideBarNavigation(props) {
             <a href="/dashboard" className="side-item">My Dashboard</a>
             <a href="/search" className="side-item">Search</a>
             <a href="/members" className="side-item">Members</a>
-            <a href="javascript:void(0)" className="side-item" onClick={ ()=>logout() }>Log Out</a>
+            <a href="#" className="side-item" onClick={ (e)=> {e.preventDefault(); logout()} }>Log Out</a>
         </div>
     );
 
