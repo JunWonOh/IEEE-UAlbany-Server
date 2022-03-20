@@ -14,7 +14,7 @@ export default function SideBarNavigation(props) {
         <div id="mySidebar" className="sidebar">
             <a href="javascript:void(0)" className="closebtn" onClick={()=>closeNav()}>&times;</a>
             <div className="account-info">
-                <div className="frame">
+                <div className="frame-large">
                     <img src={props.picture} alt="avatar"></img>
                 </div>
                 <div>

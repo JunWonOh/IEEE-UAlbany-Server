@@ -29,22 +29,21 @@
     display: block;
     transition: 0.3s;
   }
-  .account-info {
+  .account-info, .account-info p {
     margin: 0px;
     font-size: 1rem;
   }
-  .frame {
-    margin-bottom: 5px;
-  }
-  .frame{
+
+  .frame-large{
     overflow: hidden;
     height: fit-content;
     width: 50%;
     min-width: 120px;
     outline:3px solid white;
     border-radius: 50%;
+    margin-bottom: 5px;
   }
-  .frame img {
+  .frame-large img {
       width: 100%;
   }
   hr {
