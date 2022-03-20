@@ -29,13 +29,25 @@
     display: block;
     transition: 0.3s;
   }
-
+  .account-info {
+    margin: 0px;
+    font-size: 1rem;
+  }
   .frame {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+  }
+  .frame{
+    overflow: hidden;
+    height: fit-content;
+    width: 50%;
+    min-width: 120px;
+    outline:3px solid white;
+    border-radius: 50%;
+  }
+  .frame img {
+      width: 100%;
   }
   hr {
-    padding-top: 20x;
-    padding-bottom: 20px;
     height: 2px;
     color: white;
   }

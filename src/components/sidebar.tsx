@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import '../css/components/userpicture.css'
 import '../css/components/sidebar.css'
 import UserInfo from './userinfo';
 
@@ -19,9 +18,8 @@ export default function SideBarNavigation(props) {
                     <img src={props.picture} alt="avatar"></img>
                 </div>
                 <div>
-                    <p>Hello,</p>
-                    <br/>
-                    <p>{props.name}</p>
+                    <div>Hello,</div>
+                    <div><p>{props.name}</p></div>
                 </div>
             </div>
             <hr/>
