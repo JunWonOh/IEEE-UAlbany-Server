@@ -1,11 +1,27 @@
-import React, { useState } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
-import '../css/components/sidebar.css'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
+import '../css/components/sidebar.css';
 import UserInfo from './userinfo';
 
 
 export default function SideBarNavigation(props) {
     const { logout } = useAuth0();
+
+    useEffect(() => {
+        const userData = {
+            id: props.id,
+            avatar: props.picture,
+            name: props.name,
+            email: props.email
+        }
+        axios.post("https://ieeeualbany-be.herokuapp.com/users", userData).then(response => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    })
 
     function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
@@ -35,10 +51,10 @@ export default function SideBarNavigation(props) {
                 </div>
             </div>
             <hr/>
-            <a href="/dashboard">My Dashboard</a>
-            <a href="javascript:void(0)">Search</a>
-            <a href="/members">Members</a>
-            <a href="javascript:void(0)" onClick={ ()=>logout() }>Log Out</a>
+            <a href="/dashboard" className="side-item">My Dashboard</a>
+            <a href="javascript:void(0)" className="side-item">Search</a>
+            <a href="/members" className="side-item">Members</a>
+            <a href="javascript:void(0)" className="side-item" onClick={ ()=>logout() }>Log Out</a>
         </div>
     );
 

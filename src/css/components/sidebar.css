@@ -58,26 +58,18 @@
   }
   
   /* When you mouse over the navigation links, change their color */
-  .sidebar a:hover {
+  .side-item:hover {
     color: #ebba34;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(80, 31, 161, 0.1);
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .sidebar a:hover {
+    .side-item:hover {
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
-    .closebtn {
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
-    }
   }
 
-  .closebtn {
-    background:none;
-  }
-  
   /* Position and style the close button (top right corner) */
   .sidebar .closebtn {
     position: absolute;

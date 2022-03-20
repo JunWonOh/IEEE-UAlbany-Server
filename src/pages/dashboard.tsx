@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import axios from 'axios';
 import '../css/pages/home.css'
 import '../css/pages/dashboard.css'
 import Navigation from '../components/navigation'
@@ -6,7 +7,7 @@ import celebration from '../images/celebration.gif'
 
 export default function Dashboard() {
     useEffect(()=>{
-        document.title = "My Dashboard | UAlbany IEEE Server"
+        document.title = "My Dashboard | UAlbany IEEE Server";
     })
 
     const reveal = () => {
