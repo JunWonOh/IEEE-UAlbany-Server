@@ -21,13 +21,17 @@
     }
 }
   /* The sidebar links */
-  .sidebar a {
+  .sidebar a, .flex-container {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: white;
     display: block;
     transition: 0.3s;
+  }
+
+  .flex-container {
+    font-size: 1rem;
   }
   
   /* When you mouse over the navigation links, change their color */

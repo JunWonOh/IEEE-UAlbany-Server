@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import '../css/components/sidebar.css'
+import '../css/components/userpicture.css'
 import UserInfo from './userinfo';
 
 
-export default function SideBarNavigation() {
+export default function SideBarNavigation(props) {
     const { logout } = useAuth0();
 
     function closeNav() {
@@ -12,16 +13,18 @@ export default function SideBarNavigation() {
     }
     return (
         <div id="mySidebar" className="sidebar">
+            <a href="javascript:void(0)" className="closebtn" onClick={()=>closeNav()}>&times;</a>
             <div className="flex-container">
                 <div>
-                    <UserInfo/>
+                    <div className="frame">
+                        <img src={props.picture} alt="avatar"></img>
+                    </div>
                 </div>
                 <div>
                     <p>Hello,</p>
-                    <p></p>
+                    <p>{props.name}</p>
                 </div>
             </div>
-            <a href="javascript:void(0)" className="closebtn" onClick={()=>closeNav()}>&times;</a>
             <a href="/dashboard">My Dashboard</a>
             <a href="javascript:void(0)">Search</a>
             <a href="/members">Members</a>
