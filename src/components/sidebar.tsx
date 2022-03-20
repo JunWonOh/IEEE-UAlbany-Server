@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import '../css/components/sidebar.css'
 import '../css/components/userpicture.css'
+import '../css/components/sidebar.css'
 import UserInfo from './userinfo';
 
 
@@ -14,17 +14,17 @@ export default function SideBarNavigation(props) {
     return (
         <div id="mySidebar" className="sidebar">
             <a href="javascript:void(0)" className="closebtn" onClick={()=>closeNav()}>&times;</a>
-            <div className="flex-container">
-                <div>
-                    <div className="frame">
-                        <img src={props.picture} alt="avatar"></img>
-                    </div>
+            <div className="account-info">
+                <div className="frame">
+                    <img src={props.picture} alt="avatar"></img>
                 </div>
                 <div>
                     <p>Hello,</p>
+                    <br/>
                     <p>{props.name}</p>
                 </div>
             </div>
+            <hr/>
             <a href="/dashboard">My Dashboard</a>
             <a href="javascript:void(0)">Search</a>
             <a href="/members">Members</a>
