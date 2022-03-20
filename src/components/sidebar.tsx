@@ -12,7 +12,7 @@ export default function SideBarNavigation(props) {
         const userData = {
             id: props.id,
             avatar: props.picture,
-            name: props.name,
+            nickname: props.name,
             email: props.email
         }
         axios.post("https://ieeeualbany-be.herokuapp.com/users", userData).then(response => {
