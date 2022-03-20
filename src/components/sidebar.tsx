@@ -10,6 +10,18 @@ export default function SideBarNavigation(props) {
     function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
     }
+
+    function getName() {
+        if (props.name.length > 20) {
+            return (
+                <div>Hi {props.name.substring(0, 20) + '...'}</div>
+            )
+        } else {
+            return (
+                <div>Hi {props.name}</div>
+            )
+        }
+    }
     return (
         <div id="mySidebar" className="sidebar">
             <a href="javascript:void(0)" className="closebtn" onClick={()=>closeNav()}>&times;</a>
@@ -18,8 +30,8 @@ export default function SideBarNavigation(props) {
                     <img src={props.picture} alt="avatar"></img>
                 </div>
                 <div>
-                    <div>Hello,</div>
-                    <div><p>{props.name}</p></div>
+                    {getName()}
+                    <div className="id-number">{props.id}</div>
                 </div>
             </div>
             <hr/>

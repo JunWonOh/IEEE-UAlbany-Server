@@ -27,7 +27,7 @@ export default function UserPicture() {
                     </div>
                     <i className="fas fa-caret-down"></i>
                 </div>
-                <SideBarNavigation picture={user.picture} name={user.name}></SideBarNavigation>
+                <SideBarNavigation picture={user.picture} name={user.name} id ={user.sub.split("|")[2]}></SideBarNavigation>
             </div>}
             {!isAuthenticated && 
             <div>
