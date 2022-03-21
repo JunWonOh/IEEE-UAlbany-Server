@@ -24,7 +24,7 @@
     }
   }
 
-.message, .date {
+.message p, .date {
     display: -webkit-flex;
     display: flex;
     align-items: center;

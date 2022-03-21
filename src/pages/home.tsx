@@ -126,12 +126,10 @@ export default function Home() {
                    </section>
                    <div className={animation}>
                         <section id="members">
-                                <div className="frosted-container members-div">
-                                    <p className="title">Recent Members (Member Count:&nbsp;{users.length})</p>
-                                    { users.map(member => 
-                                            <MemberInfoCard key={member._id} avatar={member.avatar} nickname={member.nickname} date={member.createdAt}/>
-                                        ) }
-                                </div>
+                            <p className="title">Recent Members (Member Count:&nbsp;{users.length})</p>
+                            { users.map(member => 
+                                <MemberInfoCard key={member._id} avatar={member.avatar} nickname={member.nickname} date={member.createdAt}/>
+                            )}
                         </section>
                         <section id="portfolio">
                             <div className="row">
