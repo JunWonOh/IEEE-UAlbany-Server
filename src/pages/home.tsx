@@ -30,6 +30,8 @@ export default function Home() {
         const check_btn = document.getElementsByClassName("form-check-input")[0] as unknown as HTMLInputElement;
         if (window.localStorage.getItem("animation") === "animation-on") 
             check_btn.checked = false;
+        else if (window.localStorage.getItem("animation") === null)
+            check_btn.checked = false;
         else 
             check_btn.checked = true;
         axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", {params: {accesskey: process.env.REACT_APP_ACCESS_KEY}}).then(response => {
