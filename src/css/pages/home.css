@@ -127,6 +127,11 @@
        padding-right: 0px;
     }
   }
+
+  .members-div {
+    width: 100%;
+    height: 100%;
+  }
   #support {
     background-color: #bd8035;
     color: #16111f;

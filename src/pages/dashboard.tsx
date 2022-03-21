@@ -37,7 +37,7 @@ export default function Dashboard() {
                         <div className="container text reveal">
                             <div className="center">
                                 <h1>Almost there!</h1>
-                                <p>Visit <b>#bot-commands</b> in the UAlbany IEEE Discord server and type <b>!verify.</b> 
+                                <p>Visit <b>#bot-spam</b> in the UAlbany IEEE Discord server and type <b>!verify.</b> 
                                     The "IEEE Server" bot will message you with further instructions 
                                     to SSH into the server. After that, you can refresh this page to 
                                     access your dashboard.</p>
