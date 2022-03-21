@@ -1,0 +1,26 @@
+.member-card .frame {
+    margin-left:20px;
+    margin-right:20px;
+    outline: 2px solid #ebba34;
+}
+
+.member-card {
+    height: fit-content;
+    width:fit-content;
+    padding:5px;
+    border-radius: 5px;
+    outline: 3px solid rgba(121, 84, 255, 0.2);
+    margin: auto;
+    margin-bottom: 5px;
+    margin-top:5px;
+}
+
+.message, .date {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.date {
+    color: #ebba34;
+}

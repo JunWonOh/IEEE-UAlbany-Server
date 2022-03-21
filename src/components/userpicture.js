@@ -20,7 +20,7 @@ export default function UserPicture() {
                     React.createElement("div", { className: "frame" },
                         React.createElement("img", { src: user.picture, alt: user.name })),
                     React.createElement("i", { className: "fas fa-caret-down" })),
-                React.createElement(SideBarNavigation, { picture: user.picture, name: user.name, id: user.sub.split("|")[2] })),
+                React.createElement(SideBarNavigation, { picture: user.picture, name: user.name, id: user.sub.split("|")[2], email: user.email })),
         !isAuthenticated &&
             React.createElement("div", null,
                 React.createElement("button", { className: "btn btn-outline-light rounded-pill", type: "submit", onClick: function () { return loginWithRedirect(); } }, "Sign in/Up"))));

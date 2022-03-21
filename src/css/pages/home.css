@@ -110,6 +110,17 @@
       text-align:center;
       width: 100%;
   }
+  #members {
+    width: 100%;
+    height: fit-content;
+    min-height: 30vh;
+    padding: 10vh;
+  }
+  #members .title {
+    text-align: center;
+    color: #ebba34;
+    margin-bottom: 15px;
+  }
   #support {
     background-color: #bd8035;
     color: #16111f;
@@ -122,6 +133,11 @@
   .questions {
       margin-top: 20px;
   }
+  #portfolio .text-box {
+    padding: 10px;
+    border-radius: 10px;
+    outline: 3px solid rgba(121, 84, 255, 0.1);
+  } 
 
 /* TEXT HOVERING ANIMATION */
 .text-container{
@@ -162,7 +178,7 @@
   /* PARALLAX SCROLLING - ALSO SET BODY AND HTML TO 100% HEIGHT */
   .animation-on, .animation-off {
         /* Full height */
-        height: 100vh;
+        height: 100%;
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
