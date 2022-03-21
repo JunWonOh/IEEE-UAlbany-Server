@@ -18,10 +18,14 @@ export default function Home() {
         }
     };
     useEffect(function () {
-        if (window.localStorage.getItem("animation") === "")
+        if (window.localStorage.getItem("animation") === null) {
+            console.log('animation was empty so switched it on');
             setAnimation("animation-on");
-        else
+        }
+        else {
+            console.log('animation was already set to ' + window.localStorage.getItem("animation"));
             setAnimation(window.localStorage.getItem("animation"));
+        }
         var check_btn = document.getElementsByClassName("form-check-input")[0];
         if (window.localStorage.getItem("animation") === "animation-on")
             check_btn.checked = false;

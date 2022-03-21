@@ -23,7 +23,7 @@ export default function Home() {
     };
 
     useEffect(()=> {
-        if (window.localStorage.getItem("animation") === "")
+        if (window.localStorage.getItem("animation") === null)
             setAnimation("animation-on");
         else
             setAnimation(window.localStorage.getItem("animation"));
