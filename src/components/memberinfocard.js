@@ -26,7 +26,8 @@ export default function MemberInfoCard(props) {
                 React.createElement("div", { className: "frame" },
                     React.createElement("img", { src: props.avatar }))),
             React.createElement("div", { className: "message" },
-                "Welcome,\u00A0",
-                React.createElement("b", null, props.nickname),
-                "\u00A0to the UAlbany IEEE server!"))));
+                React.createElement("p", null,
+                    "Welcome,\u00A0",
+                    React.createElement("b", null, props.nickname),
+                    "\u00A0to the UAlbany IEEE server!")))));
 }

@@ -35,7 +35,7 @@ export default function MemberInfoCard(props) {
                     </div>
                 </div>
                 <div className="message">
-                    <p>Welcome,&nbsp;<b>{props.nickname}</b>&nbsp;to the UAlbany IEEE server!</p>
+                    div
                 </div>
             </div>
         </div>

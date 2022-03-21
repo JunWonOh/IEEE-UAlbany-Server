@@ -24,11 +24,13 @@
     }
   }
 
-.message p, .date {
-    display: -webkit-flex;
-    display: flex;
+  .flex-container {
     align-items: center;
-}
+    justify-content: center;
+  }
+  .message p {
+    margin: 0px;
+  }
 
 .date {
     color: #ebba34;

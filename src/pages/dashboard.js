@@ -32,7 +32,7 @@ export default function Dashboard() {
                             React.createElement("h1", null, "Almost there!"),
                             React.createElement("p", null,
                                 "Visit ",
-                                React.createElement("b", null, "#bot-commands"),
+                                React.createElement("b", null, "#bot-spam"),
                                 " in the UAlbany IEEE Discord server and type ",
                                 React.createElement("b", null, "!verify."),
                                 "The \"IEEE Server\" bot will message you with further instructions to SSH into the server. After that, you can refresh this page to access your dashboard."))),
