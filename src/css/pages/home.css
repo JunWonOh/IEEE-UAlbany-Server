@@ -121,6 +121,12 @@
     color: #ebba34;
     margin-bottom: 15px;
   }
+  @media (max-width: 1000px) {
+    #members {
+       padding-left: 0px;
+       padding-right: 0px;
+    }
+  }
   #support {
     background-color: #bd8035;
     color: #16111f;
