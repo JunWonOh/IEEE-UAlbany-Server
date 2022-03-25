@@ -9,11 +9,9 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  }
-  
-  .sidebar {
     background: rgba(39, 32, 51, 0.5);
-}
+  }
+
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     .sidebar {
         -webkit-backdrop-filter: blur(10px);
@@ -60,11 +58,11 @@
   }
   
   /* When you mouse over the navigation links, change their color */
-  .sidebar a:hover {
+  .side-item:hover {
     color: #ebba34;
-    box-shadow: 0 4px 2px -2px #ebba34;
+    background: rgba(80, 31, 161, 0.2);
   }
-  
+
   /* Position and style the close button (top right corner) */
   .sidebar .closebtn {
     position: absolute;

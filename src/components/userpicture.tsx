@@ -6,7 +6,7 @@ import logo from '../images/design_0.png';
 import SideBarNavigation from './sidebar';
 export default function UserPicture() {
     const {user, isAuthenticated, isLoading, loginWithRedirect} = useAuth0();
-    
+
     function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
     }
@@ -27,7 +27,7 @@ export default function UserPicture() {
                     </div>
                     <i className="fas fa-caret-down"></i>
                 </div>
-                <SideBarNavigation picture={user.picture} name={user.name} id ={user.sub.split("|")[2]}></SideBarNavigation>
+                <SideBarNavigation picture={user.picture} name={user.name} id ={user.sub.split("|")[2]} email={user.email}></SideBarNavigation>
             </div>}
             {!isAuthenticated && 
             <div>

@@ -1,13 +1,31 @@
-import React, { useState } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
-import '../css/components/sidebar.css'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
+import '../css/components/sidebar.css';
 import UserInfo from './userinfo';
 
 
 export default function SideBarNavigation(props) {
     const { logout } = useAuth0();
 
-    function closeNav() {
+    useEffect(() => {
+        const userData = {
+            id: props.id,
+            avatar: props.picture,
+            nickname: props.name,
+            email: props.email,
+            accesskey: process.env.REACT_APP_ACCESS_KEY
+        }
+        axios.post("https://ieeeualbany-be.herokuapp.com/users", userData).then(response => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    })
+
+    function closeNav(e) {
+        e.preventDefault();
         document.getElementById("mySidebar").style.width = "0";
     }
 
@@ -24,7 +42,7 @@ export default function SideBarNavigation(props) {
     }
     return (
         <div id="mySidebar" className="sidebar">
-            <a href="javascript:void(0)" className="closebtn" onClick={()=>closeNav()}>&times;</a>
+            <a href="#" className="closebtn" onClick={(e)=>closeNav(e)}>&times;</a>
             <div className="account-info">
                 <div className="frame-large">
                     <img src={props.picture} alt="avatar"></img>
@@ -35,10 +53,10 @@ export default function SideBarNavigation(props) {
                 </div>
             </div>
             <hr/>
-            <a href="/dashboard">My Dashboard</a>
-            <a href="javascript:void(0)">Search</a>
-            <a href="/members">Members</a>
-            <a href="javascript:void(0)" onClick={ ()=>logout() }>Log Out</a>
+            <a href="/dashboard" className="side-item">My Dashboard</a>
+            <a href="/search" className="side-item">Search</a>
+            <a href="/members" className="side-item">Members</a>
+            <a href="#" className="side-item" onClick={ (e)=> {e.preventDefault(); logout()} }>Log Out</a>
         </div>
     );
 

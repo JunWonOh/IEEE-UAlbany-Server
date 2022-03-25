@@ -5,9 +5,11 @@ import '../css/pages/home.css'
 import logo_svg from '../images/ieeeualbany.svg'
 import { useAuth0 } from '@auth0/auth0-react';
 import UserInfo from '../components/userinfo';
+import MemberInfoCard from '../components/memberinfocard'
 
 export default function Home() {
     const [animation, setAnimation] = useState("animation-on");
+    const [users, setUsers] = useState([]);
 
     const toggleAnimation = () => {
         if (animation === "animation-on") {
@@ -21,21 +23,24 @@ export default function Home() {
     };
 
     useEffect(()=> {
-        setAnimation(window.localStorage.getItem("animation"));
+        if (window.localStorage.getItem("animation") === null)
+            setAnimation("animation-on");
+        else
+            setAnimation(window.localStorage.getItem("animation"));
         const check_btn = document.getElementsByClassName("form-check-input")[0] as unknown as HTMLInputElement;
-        if (window.localStorage.getItem("animation") == "animation-on") {
+        if (window.localStorage.getItem("animation") === "animation-on") 
             check_btn.checked = false;
-        } else {
+        else if (window.localStorage.getItem("animation") === null)
+            check_btn.checked = false;
+        else 
             check_btn.checked = true;
-        }
-        axios.get("https://ieeeualbany-be.herokuapp.com/").then(response => {
-            console.log(response.data);
+        axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", {params: {accesskey: process.env.REACT_APP_ACCESS_KEY}}).then(response => {
+            setUsers(response.data)
         })
         .catch((error) => {
-            console.log('error!');
             console.log(error);
         })
-    })
+    }, [])
     
     const reveal = () => {
         var reveals = document.querySelectorAll(".reveal");
@@ -121,27 +126,35 @@ export default function Home() {
                            </div>
                        </div>
                    </section>
-                   <section id="portfolio">
-                       <div className="row">
-                           <div className="col-md-6">
-                                <i className="large-icon fas fa-folder-open"></i>                              
-                           </div>
-                           <div className="col-md-6">                  
-                                <div className="container-anim reveal">
-                                    <div className="text-container">
-                                        <div className="text-box">
-                                            <p className="title">Build and compare your portfolio</p>
-                                            <ul>
-                                                <li>Have your projects easily accessible to show off</li>
-                                                <li>See what projects your peers are working on by searching their Discord name</li>
-                                                <li>Members who upload a project to the server get the "Server Contributor" role to distinguish themself</li>
-                                            </ul> 
-                                        </div>
-                                    </div>                                
-                                </div>                  
-                           </div>
-                       </div>
-                   </section>
+                   <div className={animation}>
+                        <section id="members">
+                            <p className="title">Recent Members (Member Count:&nbsp;{users.length})</p>
+                            { users.map(member => 
+                                <MemberInfoCard key={member._id} avatar={member.avatar} nickname={member.nickname} date={member.createdAt}/>
+                            )}
+                        </section>
+                        <section id="portfolio">
+                            <div className="row">
+                                <div className="col-md-6">
+                                        <i className="large-icon fas fa-folder-open"></i>                              
+                                </div>
+                                <div className="col-md-6">                  
+                                        <div className="container-anim reveal">
+                                            <div className="text-container">
+                                                <div className="text-box frosted-container">
+                                                    <p className="title">Build and compare your portfolio</p>
+                                                    <ul>
+                                                        <li>Have your projects easily accessible to show off</li>
+                                                        <li>See what projects your peers are working on by searching their Discord name</li>
+                                                        <li>Members who upload a project to the server get the "Server Contributor" role to distinguish themself</li>
+                                                    </ul> 
+                                                </div>
+                                            </div>                                
+                                        </div>                  
+                                </div>
+                            </div>
+                        </section>
+                   </div>
                    <section id="support">
                        <div className="faq">
                            <p className="title">Q and A</p>

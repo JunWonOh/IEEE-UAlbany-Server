@@ -3,8 +3,10 @@ import axios from 'axios';
 import Navigation from '../components/navigation';
 import '../css/pages/home.css';
 import logo_svg from '../images/ieeeualbany.svg';
+import MemberInfoCard from '../components/memberinfocard';
 export default function Home() {
     var _a = useState("animation-on"), animation = _a[0], setAnimation = _a[1];
+    var _b = useState([]), users = _b[0], setUsers = _b[1];
     var toggleAnimation = function () {
         if (animation === "animation-on") {
             window.localStorage.setItem("animation", "animation-off");
@@ -16,22 +18,24 @@ export default function Home() {
         }
     };
     useEffect(function () {
-        setAnimation(window.localStorage.getItem("animation"));
+        if (window.localStorage.getItem("animation") === null)
+            setAnimation("animation-on");
+        else
+            setAnimation(window.localStorage.getItem("animation"));
         var check_btn = document.getElementsByClassName("form-check-input")[0];
-        if (window.localStorage.getItem("animation") == "animation-on") {
+        if (window.localStorage.getItem("animation") === "animation-on")
             check_btn.checked = false;
-        }
-        else {
+        else if (window.localStorage.getItem("animation") === null)
+            check_btn.checked = false;
+        else
             check_btn.checked = true;
-        }
-        axios.get("https://ieeeualbany-be.herokuapp.com/").then(function (response) {
-            console.log(response.data);
+        axios.get("https://ieeeualbany-be.herokuapp.com/users/recentmembers", { params: { accesskey: process.env.REACT_APP_ACCESS_KEY } }).then(function (response) {
+            setUsers(response.data);
         })
             .catch(function (error) {
-            console.log('error!');
             console.log(error);
         });
-    });
+    }, []);
     var reveal = function () {
         var reveals = document.querySelectorAll(".reveal");
         for (var i = 0; i < reveals.length; i++) {
@@ -89,19 +93,28 @@ export default function Home() {
                                         React.createElement("p", { className: "disclaimer" }, "(Disclaimer: By tying your Discord account to the server, only your Discord profile name, avatar, ID, and email will be logged, which most Discord bots have access to already. You can remove this information any time by contacting the server administrator.)"))))),
                         React.createElement("div", { className: "col-md-6" },
                             React.createElement("i", { className: "large-icon font-awesome fab fa-discord" })))),
-                React.createElement("section", { id: "portfolio" },
-                    React.createElement("div", { className: "row" },
-                        React.createElement("div", { className: "col-md-6" },
-                            React.createElement("i", { className: "large-icon fas fa-folder-open" })),
-                        React.createElement("div", { className: "col-md-6" },
-                            React.createElement("div", { className: "container-anim reveal" },
-                                React.createElement("div", { className: "text-container" },
-                                    React.createElement("div", { className: "text-box" },
-                                        React.createElement("p", { className: "title" }, "Build and compare your portfolio"),
-                                        React.createElement("ul", null,
-                                            React.createElement("li", null, "Have your projects easily accessible to show off"),
-                                            React.createElement("li", null, "See what projects your peers are working on by searching their Discord name"),
-                                            React.createElement("li", null, "Members who upload a project to the server get the \"Server Contributor\" role to distinguish themself")))))))),
+                React.createElement("div", { className: animation },
+                    React.createElement("section", { id: "members" },
+                        React.createElement("p", { className: "title" },
+                            "Recent Members (Member Count:\u00A0",
+                            users.length,
+                            ")"),
+                        users.map(function (member) {
+                            return React.createElement(MemberInfoCard, { key: member._id, avatar: member.avatar, nickname: member.nickname, date: member.createdAt });
+                        })),
+                    React.createElement("section", { id: "portfolio" },
+                        React.createElement("div", { className: "row" },
+                            React.createElement("div", { className: "col-md-6" },
+                                React.createElement("i", { className: "large-icon fas fa-folder-open" })),
+                            React.createElement("div", { className: "col-md-6" },
+                                React.createElement("div", { className: "container-anim reveal" },
+                                    React.createElement("div", { className: "text-container" },
+                                        React.createElement("div", { className: "text-box frosted-container" },
+                                            React.createElement("p", { className: "title" }, "Build and compare your portfolio"),
+                                            React.createElement("ul", null,
+                                                React.createElement("li", null, "Have your projects easily accessible to show off"),
+                                                React.createElement("li", null, "See what projects your peers are working on by searching their Discord name"),
+                                                React.createElement("li", null, "Members who upload a project to the server get the \"Server Contributor\" role to distinguish themself"))))))))),
                 React.createElement("section", { id: "support" },
                     React.createElement("div", { className: "faq" },
                         React.createElement("p", { className: "title" }, "Q and A"),
